@@ -1,0 +1,282 @@
+/* ============================================================
+   OMEGA INVITATION - Theme: Luxury Black
+   Dramatic dark with gold accents and firefly particles
+   ============================================================ */
+
+:root {
+  --theme-primary: #C9A84C;
+  --theme-secondary: #1A1A1A;
+  --theme-bg: #0A0A0A;
+  --theme-text: #E8E8E8;
+  --theme-accent: #FFD700;
+  --theme-dark: #050505;
+  --theme-surface: rgba(255,255,255,0.04);
+  --theme-border: rgba(201,168,76,0.15);
+  --font-display: 'Cinzel', 'Georgia', serif;
+  --font-body: 'Raleway', sans-serif;
+}
+
+body.theme-luxury-black {
+  background: var(--theme-bg);
+}
+
+/* Opening */
+.theme-luxury-black .opening-bg {
+  background: #050505;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.04) 0%, transparent 70%);
+}
+
+.theme-luxury-black .opening-label {
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.theme-luxury-black .opening-bride,
+.theme-luxury-black .opening-groom {
+  color: #E8E8E8;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: clamp(20px, 5vw, 38px);
+}
+
+.theme-luxury-black .opening-amp {
+  color: #C9A84C;
+  font-size: clamp(28px, 7vw, 48px);
+}
+
+.theme-luxury-black .opening-cta {
+  background: transparent;
+  border: 1px solid #C9A84C;
+  color: #C9A84C;
+  letter-spacing: 4px;
+  font-size: 11px;
+  box-shadow: 0 0 20px rgba(201,168,76,0.15), inset 0 0 20px rgba(201,168,76,0.02);
+  animation: none;
+  transition: all 0.3s ease;
+}
+
+.theme-luxury-black .opening-cta:hover {
+  background: #C9A84C;
+  color: #050505;
+  box-shadow: 0 0 40px rgba(201,168,76,0.35);
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.theme-luxury-black .section-hero { background: #0A0A0A; }
+
+.theme-luxury-black .hero-bismillah {
+  color: #C9A84C;
+  font-family: 'Amiri', serif;
+  text-shadow: 0 0 30px rgba(201,168,76,0.3);
+}
+
+.theme-luxury-black .couple-name {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: clamp(16px, 3.5vw, 24px);
+}
+
+.theme-luxury-black .couple-photo-frame {
+  border-color: #C9A84C;
+  box-shadow: 0 0 30px rgba(201,168,76,0.15), 0 8px 40px rgba(0,0,0,0.8);
+}
+
+.theme-luxury-black .divider-amp {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: clamp(24px, 6vw, 42px);
+}
+
+/* Section titles */
+.theme-luxury-black .section-title {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: clamp(18px, 4vw, 28px);
+}
+
+/* Countdown */
+.theme-luxury-black .section-countdown { background: #080808; }
+.theme-luxury-black .countdown-block {
+  background: rgba(201,168,76,0.04);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 4px;
+}
+
+.theme-luxury-black .countdown-number {
+  background: linear-gradient(135deg, #C9A84C, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.theme-luxury-black .countdown-label {
+  letter-spacing: 3px;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+/* Event */
+.theme-luxury-black .section-event { background: #0A0A0A; }
+.theme-luxury-black .event-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 4px;
+}
+.theme-luxury-black .event-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+}
+.theme-luxury-black .event-type {
+  letter-spacing: 4px;
+  font-size: 10px;
+}
+.theme-luxury-black .event-map-btn {
+  border-color: rgba(201,168,76,0.4);
+  color: #C9A84C;
+  border-radius: 0;
+  letter-spacing: 2px;
+  font-size: 11px;
+}
+.theme-luxury-black .event-map-btn:hover {
+  background: #C9A84C;
+  color: #050505;
+}
+.theme-luxury-black .maps-embed-wrapper {
+  border-color: rgba(201,168,76,0.1);
+  border-radius: 0;
+  filter: grayscale(80%) sepia(20%);
+  transition: filter 0.3s;
+}
+.theme-luxury-black .maps-embed-wrapper:hover { filter: grayscale(0%) sepia(0%); }
+
+/* Story */
+.theme-luxury-black .section-story { background: #080808; }
+
+/* RSVP */
+.theme-luxury-black .section-rsvp { background: #0A0A0A; }
+.theme-luxury-black .rsvp-form,
+.theme-luxury-black .guestbook-form {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 4px;
+}
+.theme-luxury-black .form-label {
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+.theme-luxury-black .form-input {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(201,168,76,0.15);
+  border-radius: 2px;
+}
+.theme-luxury-black .form-input:focus {
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 2px rgba(201,168,76,0.1);
+}
+.theme-luxury-black .submit-btn {
+  background: transparent;
+  border: 1px solid #C9A84C;
+  color: #C9A84C;
+  letter-spacing: 3px;
+  font-size: 12px;
+  border-radius: 0;
+}
+.theme-luxury-black .submit-btn:hover {
+  background: #C9A84C;
+  color: #050505;
+  transform: none;
+  box-shadow: 0 0 30px rgba(201,168,76,0.3);
+}
+.theme-luxury-black .rsvp-option {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(201,168,76,0.12);
+  border-radius: 2px;
+}
+.theme-luxury-black .rsvp-option:has(input:checked) {
+  border-color: #C9A84C;
+  background: rgba(201,168,76,0.06);
+}
+.theme-luxury-black .rsvp-stats { border-radius: 0; }
+.theme-luxury-black .stat-item { border-right-color: rgba(201,168,76,0.12); }
+
+/* Guestbook */
+.theme-luxury-black .section-guestbook { background: #080808; }
+.theme-luxury-black .guestbook-message {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(201,168,76,0.1);
+  border-radius: 4px;
+}
+.theme-luxury-black .message-avatar {
+  background: transparent;
+  border: 1px solid #C9A84C;
+  color: #C9A84C;
+}
+
+/* Gift */
+.theme-luxury-black .section-gift { background: #0A0A0A; }
+.theme-luxury-black .gift-account {
+  background: rgba(255,255,255,0.02);
+  border-color: rgba(201,168,76,0.12);
+  border-radius: 4px;
+}
+.theme-luxury-black .gift-copy-btn {
+  background: transparent;
+  border: 1px solid #C9A84C;
+  color: #C9A84C;
+  border-radius: 0;
+}
+.theme-luxury-black .gift-copy-btn:hover {
+  background: #C9A84C;
+  color: #050505;
+}
+.theme-luxury-black .gift-copy-btn.copied { background: #2ECC71; border-color: #2ECC71; color: #050505; }
+
+/* Footer */
+.theme-luxury-black .invitation-footer {
+  background: #050505;
+  border-top: 1px solid rgba(201,168,76,0.1);
+}
+
+/* Music */
+.theme-luxury-black .music-controller {
+  background: rgba(5,5,5,0.9);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 4px;
+}
+.theme-luxury-black .music-btn {
+  background: transparent;
+  border: 1px solid #C9A84C;
+  border-radius: 2px;
+}
+.theme-luxury-black .music-icon span { background: #C9A84C; }
+
+/* Divider ornament */
+.theme-luxury-black .section-divider::before {
+  content: '◆';
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+/* Load more */
+.theme-luxury-black .load-more-btn {
+  border-radius: 0;
+  letter-spacing: 2px;
+  font-size: 11px;
+}
+
+/* Add calendar */
+.theme-luxury-black .add-calendar-btn {
+  border-radius: 0;
+  border-color: rgba(201,168,76,0.2);
+  letter-spacing: 2px;
+  font-size: 11px;
+}
+.theme-luxury-black .add-calendar-btn:hover {
+  background: #C9A84C;
+  color: #050505;
+  border-color: #C9A84C;
+}

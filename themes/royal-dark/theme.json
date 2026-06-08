@@ -1,0 +1,25 @@
+{
+  "slug": "royal-dark",
+  "name": "Royal Dark",
+  "description": "Kemewahan kerajaan dengan nuansa gelap yang memukau",
+  "category": "luxury",
+  "tags": ["royal", "dark", "luxury", "elegant", "gold"],
+  "primaryFont": "Cinzel Decorative",
+  "secondaryFont": "Crimson Pro",
+  "particles": "gold_dust",
+  "openingAnimation": "royal_reveal",
+  "sectionAnimation": "majestic",
+  "cssVariables": {
+    "--theme-primary": "#8B6914",
+    "--theme-secondary": "#1C1208",
+    "--theme-bg": "#100A04",
+    "--theme-text": "#F0D080",
+    "--theme-accent": "#D4AF37",
+    "--theme-dark": "#080503"
+  },
+  "features": ["gold_dust", "dark", "uppercase", "regal"],
+  "isPremium": true,
+  "isFeatured": false,
+  "sortOrder": 6,
+  "preview": { "bg": "#100A04", "primary": "#D4AF37", "text": "#F0D080" }
+}

@@ -1,0 +1,31 @@
+{
+  "slug": "islamic-elegant",
+  "name": "Islamic Elegant",
+  "description": "Islami dengan ornamen arabesque yang elegan",
+  "category": "islamic",
+  "tags": ["islamic", "arabic", "elegant", "ornament", "green"],
+  "primaryFont": "Amiri",
+  "secondaryFont": "Noto Sans",
+  "particles": "none",
+  "openingAnimation": "arabesque",
+  "sectionAnimation": "reveal",
+  "cssVariables": {
+    "--theme-primary": "#2C6E49",
+    "--theme-secondary": "#F0EAD6",
+    "--theme-bg": "#FDFAF4",
+    "--theme-text": "#1A2E1A",
+    "--theme-accent": "#C9A84C",
+    "--theme-dark": "#0D1A0D",
+    "--theme-surface": "rgba(44,110,73,0.06)",
+    "--theme-border": "rgba(44,110,73,0.15)"
+  },
+  "features": ["arabesque", "light_theme", "bismillah_prominent"],
+  "isPremium": false,
+  "isFeatured": true,
+  "sortOrder": 7,
+  "preview": {
+    "bg": "#FDFAF4",
+    "primary": "#2C6E49",
+    "text": "#1A2E1A"
+  }
+}

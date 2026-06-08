@@ -1,0 +1,44 @@
+/* ============================================================
+   OMEGA - Theme: Floral Pink
+   ============================================================ */
+:root{--theme-primary:#D4688E;--theme-secondary:#FCF0F4;--theme-bg:#FEF8FA;--theme-text:#3D1A2A;--theme-accent:#F09DB8;--theme-dark:#200A13;--theme-surface:rgba(212,104,142,0.06);--theme-border:rgba(212,104,142,0.15);--font-display:'Great Vibes',cursive;--font-body:'Lato',sans-serif;}
+body.theme-floral-pink{background:#FEF8FA;}
+.theme-floral-pink .opening-bg{background:linear-gradient(135deg,#200A13,#3D1A2A);}
+.theme-floral-pink .opening-bride,.theme-floral-pink .opening-groom{color:#FCF0F4;}
+.theme-floral-pink .opening-amp,.theme-floral-pink .opening-guest-name{color:#F09DB8;}
+.theme-floral-pink .opening-label{color:#F09DB8;}
+.theme-floral-pink .opening-cta{background:linear-gradient(135deg,#D4688E,#F09DB8);color:#fff;box-shadow:0 8px 32px rgba(212,104,142,0.4);}
+.theme-floral-pink .section-hero{background:#FEF8FA;}
+.theme-floral-pink .hero-overlay{display:none;}
+.theme-floral-pink .hero-bismillah{color:#D4688E;}
+.theme-floral-pink .section-title{color:#D4688E;font-size:clamp(26px,6vw,44px);}
+.theme-floral-pink .couple-name{color:#3D1A2A;font-size:clamp(22px,5vw,36px);}
+.theme-floral-pink .couple-full-name{color:#D4688E;}
+.theme-floral-pink .couple-photo-frame{border-color:#D4688E;box-shadow:0 8px 40px rgba(212,104,142,0.2);}
+.theme-floral-pink .divider-amp{color:#D4688E;}
+.theme-floral-pink .section-countdown{background:#FCF0F4;}
+.theme-floral-pink .countdown-number{color:#D4688E;}
+.theme-floral-pink .countdown-block{background:#fff;border-color:rgba(212,104,142,0.2);}
+.theme-floral-pink .event-card{background:#fff;border-color:rgba(212,104,142,0.12);color:#3D1A2A;}
+.theme-floral-pink .event-type,.theme-floral-pink .event-time{color:#D4688E;}
+.theme-floral-pink .event-map-btn{border-color:#D4688E;color:#D4688E;}
+.theme-floral-pink .event-map-btn:hover{background:#D4688E;color:#fff;}
+.theme-floral-pink .form-label{color:#D4688E;}
+.theme-floral-pink .form-input{background:#fff;border-color:rgba(212,104,142,0.15);color:#3D1A2A;}
+.theme-floral-pink .form-input:focus{border-color:#D4688E;box-shadow:0 0 0 3px rgba(212,104,142,0.1);}
+.theme-floral-pink .form-input::placeholder{color:rgba(61,26,42,0.3);}
+.theme-floral-pink .submit-btn{background:#D4688E;color:#fff;box-shadow:0 8px 24px rgba(212,104,142,0.3);}
+.theme-floral-pink .rsvp-form,.theme-floral-pink .guestbook-form{background:#fff;border-color:rgba(212,104,142,0.12);}
+.theme-floral-pink .rsvp-option{background:#FEF8FA;border-color:rgba(212,104,142,0.12);color:#3D1A2A;}
+.theme-floral-pink .rsvp-option:has(input:checked){border-color:#D4688E;background:rgba(212,104,142,0.08);}
+.theme-floral-pink .stat-number{color:#D4688E;}
+.theme-floral-pink .guestbook-message{background:#fff;border-color:rgba(212,104,142,0.08);color:#3D1A2A;}
+.theme-floral-pink .message-avatar{background:linear-gradient(135deg,#D4688E,#F09DB8);color:#fff;}
+.theme-floral-pink .story-item::before{background:#D4688E;}
+.theme-floral-pink .story-date{color:#D4688E;}
+.theme-floral-pink .story-title{color:#3D1A2A;}
+.theme-floral-pink .gift-copy-btn{background:#D4688E;color:#fff;}
+.theme-floral-pink .invitation-footer{background:linear-gradient(to top,#200A13,#3D1A2A);color:#FCF0F4;}
+.theme-floral-pink .footer-couple{color:#F09DB8;}
+.theme-floral-pink .music-btn{background:#D4688E;}
+.theme-floral-pink .section-divider::before{content:'✿';font-size:18px;color:#D4688E;}

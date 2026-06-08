@@ -1,0 +1,31 @@
+{
+  "slug": "modern-korean",
+  "name": "Modern Korean",
+  "description": "Minimalis elegan bergaya Korea yang bersih dan modern",
+  "category": "modern",
+  "tags": ["korean", "minimal", "clean", "modern", "light"],
+  "primaryFont": "Noto Serif KR",
+  "secondaryFont": "Noto Sans KR",
+  "particles": "none",
+  "openingAnimation": "slide_reveal",
+  "sectionAnimation": "fade",
+  "cssVariables": {
+    "--theme-primary": "#2C2C2C",
+    "--theme-secondary": "#F8F8F8",
+    "--theme-bg": "#FFFFFF",
+    "--theme-text": "#1A1A1A",
+    "--theme-accent": "#A68A6A",
+    "--theme-dark": "#0D0D0D",
+    "--theme-surface": "rgba(0,0,0,0.03)",
+    "--theme-border": "rgba(0,0,0,0.08)"
+  },
+  "features": ["light_theme", "minimal", "clean"],
+  "isPremium": false,
+  "isFeatured": false,
+  "sortOrder": 4,
+  "preview": {
+    "bg": "#FFFFFF",
+    "primary": "#2C2C2C",
+    "text": "#1A1A1A"
+  }
+}

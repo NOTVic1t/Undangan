@@ -1,0 +1,25 @@
+{
+  "slug": "floral-pink",
+  "name": "Floral Pink",
+  "description": "Penuh bunga dengan warna pink lembut yang romantis",
+  "category": "romantic",
+  "tags": ["floral", "pink", "romantic", "feminine", "light"],
+  "primaryFont": "Great Vibes",
+  "secondaryFont": "Lato",
+  "particles": "petals",
+  "openingAnimation": "bloom",
+  "sectionAnimation": "petal_reveal",
+  "cssVariables": {
+    "--theme-primary": "#D4688E",
+    "--theme-secondary": "#FCF0F4",
+    "--theme-bg": "#FEF8FA",
+    "--theme-text": "#3D1A2A",
+    "--theme-accent": "#F09DB8",
+    "--theme-dark": "#200A13"
+  },
+  "features": ["petals", "light_theme", "floral", "cursive"],
+  "isPremium": false,
+  "isFeatured": false,
+  "sortOrder": 8,
+  "preview": { "bg": "#FEF8FA", "primary": "#D4688E", "text": "#3D1A2A" }
+}

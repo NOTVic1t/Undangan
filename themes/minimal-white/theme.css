@@ -1,0 +1,46 @@
+/* ============================================================
+   OMEGA - Theme: Minimal White
+   ============================================================ */
+:root { --theme-primary:#8B6F47;--theme-secondary:#F5F5F0;--theme-bg:#FAFAF8;--theme-text:#2A2A2A;--theme-accent:#C4A882;--theme-dark:#1A1A1A;--theme-surface:rgba(139,111,71,0.05);--theme-border:rgba(139,111,71,0.12);--font-display:'Cormorant',Georgia,serif;--font-body:'Jost',sans-serif; }
+body.theme-minimal-white{background:#FAFAF8;}
+.theme-minimal-white .opening-bg{background:linear-gradient(135deg,#F5F5F0,#FAFAF8);}
+.theme-minimal-white .opening-bride,.theme-minimal-white .opening-groom{color:#2A2A2A;}
+.theme-minimal-white .opening-amp,.theme-minimal-white .opening-guest-name,.theme-minimal-white .opening-label{color:#8B6F47;}
+.theme-minimal-white .opening-cta{background:#8B6F47;color:#fff;box-shadow:0 8px 24px rgba(139,111,71,0.3);animation:none;}
+.theme-minimal-white .opening-cta:hover{background:#7A6040;}
+.theme-minimal-white .section-hero{background:#FAFAF8;}
+.theme-minimal-white .hero-overlay{display:none;}
+.theme-minimal-white .hero-bismillah{color:#8B6F47;}
+.theme-minimal-white .hero-intro,.theme-minimal-white .couple-name{color:#2A2A2A;}
+.theme-minimal-white .couple-full-name{color:#8B6F47;}
+.theme-minimal-white .couple-parents{color:#777;}
+.theme-minimal-white .couple-photo-frame{border-color:#8B6F47;box-shadow:0 8px 30px rgba(0,0,0,0.08);}
+.theme-minimal-white .divider-amp{color:#8B6F47;}
+.theme-minimal-white .section-title{color:#2A2A2A;}
+.theme-minimal-white .section-countdown{background:#F5F5F0;}
+.theme-minimal-white .countdown-block{background:#fff;border-color:rgba(139,111,71,0.15);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.theme-minimal-white .countdown-number{color:#8B6F47;}
+.theme-minimal-white .event-card{background:#fff;border-color:rgba(139,111,71,0.1);color:#2A2A2A;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.theme-minimal-white .event-type{color:#8B6F47;}
+.theme-minimal-white .event-time{color:#8B6F47;}
+.theme-minimal-white .event-map-btn{border-color:#8B6F47;color:#8B6F47;}
+.theme-minimal-white .event-map-btn:hover{background:#8B6F47;color:#fff;}
+.theme-minimal-white .form-label{color:#8B6F47;}
+.theme-minimal-white .form-input{background:#fff;border-color:rgba(139,111,71,0.15);color:#2A2A2A;}
+.theme-minimal-white .form-input:focus{border-color:#8B6F47;box-shadow:0 0 0 3px rgba(139,111,71,0.08);}
+.theme-minimal-white .form-input::placeholder{color:#AAA;}
+.theme-minimal-white .submit-btn{background:#8B6F47;color:#fff;}
+.theme-minimal-white .submit-btn:hover{background:#7A6040;}
+.theme-minimal-white .rsvp-form,.theme-minimal-white .guestbook-form{background:#fff;border-color:rgba(139,111,71,0.1);}
+.theme-minimal-white .rsvp-option{background:#F5F5F0;border-color:rgba(139,111,71,0.12);color:#2A2A2A;}
+.theme-minimal-white .rsvp-option:has(input:checked){border-color:#8B6F47;background:rgba(139,111,71,0.06);}
+.theme-minimal-white .stat-number{color:#8B6F47;}
+.theme-minimal-white .guestbook-message{background:#fff;border-color:rgba(139,111,71,0.08);color:#2A2A2A;}
+.theme-minimal-white .message-avatar{background:#8B6F47;color:#fff;}
+.theme-minimal-white .story-timeline::before{background:linear-gradient(to bottom,transparent,#8B6F47,transparent);}
+.theme-minimal-white .story-item::before{background:#8B6F47;}
+.theme-minimal-white .story-title{color:#2A2A2A;}
+.theme-minimal-white .invitation-footer{background:#2A2A2A;color:#F5F5F0;}
+.theme-minimal-white .footer-couple{color:#C4A882;}
+.theme-minimal-white .music-btn{background:#8B6F47;}
+.theme-minimal-white .section-divider::before{content:'—';font-size:12px;color:#8B6F47;letter-spacing:2px;}

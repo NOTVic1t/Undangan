@@ -1,0 +1,25 @@
+{
+  "slug": "minimal-white",
+  "name": "Minimal White",
+  "description": "Bersih, sederhana, dan berkelas dengan sentuhan hangat",
+  "category": "minimal",
+  "tags": ["white", "minimal", "clean", "classic", "warm"],
+  "primaryFont": "Cormorant",
+  "secondaryFont": "Jost",
+  "particles": "none",
+  "openingAnimation": "clean_fade",
+  "sectionAnimation": "subtle_up",
+  "cssVariables": {
+    "--theme-primary": "#8B6F47",
+    "--theme-secondary": "#F5F5F0",
+    "--theme-bg": "#FAFAF8",
+    "--theme-text": "#2A2A2A",
+    "--theme-accent": "#C4A882",
+    "--theme-dark": "#1A1A1A"
+  },
+  "features": ["light_theme", "minimal"],
+  "isPremium": false,
+  "isFeatured": false,
+  "sortOrder": 5,
+  "preview": { "bg": "#FAFAF8", "primary": "#8B6F47", "text": "#2A2A2A" }
+}

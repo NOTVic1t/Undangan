@@ -1,0 +1,31 @@
+{
+  "slug": "luxury-sakura",
+  "name": "Luxury Sakura",
+  "description": "Romantis dengan kelopak bunga sakura yang berjatuhan",
+  "category": "romantic",
+  "tags": ["sakura", "pink", "romantic", "floral", "light"],
+  "primaryFont": "Playfair Display",
+  "secondaryFont": "Nunito",
+  "particles": "petals",
+  "openingAnimation": "petal_fall",
+  "sectionAnimation": "bloom",
+  "cssVariables": {
+    "--theme-primary": "#C4637A",
+    "--theme-secondary": "#F9EEF1",
+    "--theme-bg": "#FDF6F8",
+    "--theme-text": "#3D1A24",
+    "--theme-accent": "#E891A8",
+    "--theme-dark": "#2A0F17",
+    "--theme-surface": "rgba(196,99,122,0.06)",
+    "--theme-border": "rgba(196,99,122,0.18)"
+  },
+  "features": ["petals", "light_theme", "floral"],
+  "isPremium": false,
+  "isFeatured": true,
+  "sortOrder": 2,
+  "preview": {
+    "bg": "#FDF6F8",
+    "primary": "#C4637A",
+    "text": "#3D1A24"
+  }
+}

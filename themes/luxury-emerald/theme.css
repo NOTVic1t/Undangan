@@ -1,0 +1,61 @@
+/* ============================================================
+   OMEGA - Theme: Luxury Emerald
+   Deep jewel-toned emerald luxury
+   ============================================================ */
+:root{--theme-primary:#1A6B4A;--theme-secondary:#EBF5EE;--theme-bg:#F5FAF7;--theme-text:#0A2E1A;--theme-accent:#2ECC71;--theme-dark:#041A0D;--theme-surface:rgba(26,107,74,0.06);--theme-border:rgba(26,107,74,0.15);--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Montserrat',sans-serif;}
+body.theme-luxury-emerald{background:#F5FAF7;}
+.theme-luxury-emerald .opening-bg{background:radial-gradient(ellipse at 50% 40%,#0A2E1A 0%,#041A0D 70%);}
+.theme-luxury-emerald .opening-bride,.theme-luxury-emerald .opening-groom{color:#EBF5EE;}
+.theme-luxury-emerald .opening-amp,.theme-luxury-emerald .opening-guest-name{color:#2ECC71;}
+.theme-luxury-emerald .opening-cta{background:linear-gradient(135deg,#1A6B4A,#2ECC71,#1A6B4A);background-size:200%;color:#fff;animation:emeraldShimmer 3s ease infinite,pulseCta 3s ease infinite;}
+@keyframes emeraldShimmer{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.theme-luxury-emerald .section-hero{background:linear-gradient(to bottom,#F5FAF7,#EBF5EE);}
+.theme-luxury-emerald .hero-overlay{display:none;}
+.theme-luxury-emerald .hero-bismillah{color:#1A6B4A;}
+.theme-luxury-emerald .section-title{color:#1A6B4A;}
+.theme-luxury-emerald .couple-name{color:#0A2E1A;}
+.theme-luxury-emerald .couple-full-name{color:#1A6B4A;}
+.theme-luxury-emerald .couple-parents,.theme-luxury-emerald .hero-intro{color:#555;}
+.theme-luxury-emerald .couple-photo-frame{border-color:#1A6B4A;box-shadow:0 8px 40px rgba(26,107,74,0.15);}
+.theme-luxury-emerald .divider-amp{color:#1A6B4A;}
+.theme-luxury-emerald .section-countdown{background:#EBF5EE;}
+.theme-luxury-emerald .countdown-block{background:#fff;border-color:rgba(26,107,74,0.2);}
+.theme-luxury-emerald .countdown-number{background:linear-gradient(135deg,#1A6B4A,#2ECC71);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.theme-luxury-emerald .event-card{background:#fff;border-color:rgba(26,107,74,0.12);color:#0A2E1A;box-shadow:0 2px 12px rgba(26,107,74,0.06);}
+.theme-luxury-emerald .event-type,.theme-luxury-emerald .event-time{color:#1A6B4A;}
+.theme-luxury-emerald .event-map-btn{border-color:#1A6B4A;color:#1A6B4A;}
+.theme-luxury-emerald .event-map-btn:hover{background:#1A6B4A;color:#fff;}
+.theme-luxury-emerald .add-calendar-btn{border-color:rgba(26,107,74,0.2);color:#0A2E1A;}
+.theme-luxury-emerald .add-calendar-btn:hover{background:#1A6B4A;color:#fff;border-color:#1A6B4A;}
+.theme-luxury-emerald .section-rsvp,.theme-luxury-emerald .section-story{background:#F5FAF7;}
+.theme-luxury-emerald .section-countdown,.theme-luxury-emerald .section-gift{background:#EBF5EE;}
+.theme-luxury-emerald .rsvp-form,.theme-luxury-emerald .guestbook-form{background:#fff;border-color:rgba(26,107,74,0.12);}
+.theme-luxury-emerald .form-label{color:#1A6B4A;}
+.theme-luxury-emerald .form-input{background:#F5FAF7;border-color:rgba(26,107,74,0.15);color:#0A2E1A;}
+.theme-luxury-emerald .form-input:focus{border-color:#1A6B4A;box-shadow:0 0 0 3px rgba(26,107,74,0.1);}
+.theme-luxury-emerald .form-input::placeholder{color:rgba(10,46,26,0.3);}
+.theme-luxury-emerald .submit-btn{background:#1A6B4A;color:#fff;box-shadow:0 8px 24px rgba(26,107,74,0.3);}
+.theme-luxury-emerald .submit-btn:hover{background:#155A3D;}
+.theme-luxury-emerald .rsvp-option{background:#F5FAF7;border-color:rgba(26,107,74,0.12);color:#0A2E1A;}
+.theme-luxury-emerald .rsvp-option:has(input:checked){border-color:#1A6B4A;background:rgba(26,107,74,0.08);}
+.theme-luxury-emerald .stat-number{color:#1A6B4A;}
+.theme-luxury-emerald .guestbook-message{background:#fff;border-color:rgba(26,107,74,0.08);color:#0A2E1A;}
+.theme-luxury-emerald .message-name,.theme-luxury-emerald .message-text{color:#0A2E1A;}
+.theme-luxury-emerald .message-avatar{background:linear-gradient(135deg,#1A6B4A,#2ECC71);color:#fff;}
+.theme-luxury-emerald .story-timeline::before{background:linear-gradient(to bottom,transparent,#1A6B4A,transparent);}
+.theme-luxury-emerald .story-item::before{background:#1A6B4A;}
+.theme-luxury-emerald .story-date{color:#1A6B4A;}
+.theme-luxury-emerald .story-title{color:#0A2E1A;}
+.theme-luxury-emerald .gift-account{background:#fff;border-color:rgba(26,107,74,0.12);}
+.theme-luxury-emerald .gift-bank-name{color:#1A6B4A;}
+.theme-luxury-emerald .gift-account-number,.theme-luxury-emerald .gift-account-name{color:#0A2E1A;}
+.theme-luxury-emerald .gift-copy-btn{background:#1A6B4A;color:#fff;}
+.theme-luxury-emerald .gift-copy-btn:hover{background:#155A3D;}
+.theme-luxury-emerald .invitation-footer{background:linear-gradient(to top,#041A0D,#0A2E1A);color:#EBF5EE;}
+.theme-luxury-emerald .footer-couple{color:#2ECC71;}
+.theme-luxury-emerald .footer-brand-link{color:#2ECC71;}
+.theme-luxury-emerald .music-controller{background:rgba(4,26,13,0.85);border-color:rgba(26,107,74,0.4);}
+.theme-luxury-emerald .music-btn{background:#1A6B4A;}
+.theme-luxury-emerald .pax-btn{color:#1A6B4A;}
+.theme-luxury-emerald .pax-btn:hover{background:#1A6B4A;color:#fff;}
+.theme-luxury-emerald .section-divider::before{content:'◈';font-size:14px;color:#1A6B4A;}

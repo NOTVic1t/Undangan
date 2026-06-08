@@ -1,0 +1,31 @@
+{
+  "slug": "luxury-black",
+  "name": "Luxury Black",
+  "description": "Modern dan berani dengan tema gelap yang dramatis",
+  "category": "modern",
+  "tags": ["black", "dark", "modern", "luxury", "bold"],
+  "primaryFont": "Cinzel",
+  "secondaryFont": "Raleway",
+  "particles": "fireflies",
+  "openingAnimation": "dramatic_reveal",
+  "sectionAnimation": "fade_up",
+  "cssVariables": {
+    "--theme-primary": "#C9A84C",
+    "--theme-secondary": "#1A1A1A",
+    "--theme-bg": "#0A0A0A",
+    "--theme-text": "#E8E8E8",
+    "--theme-accent": "#FFD700",
+    "--theme-dark": "#050505",
+    "--theme-surface": "rgba(255,255,255,0.04)",
+    "--theme-border": "rgba(201,168,76,0.15)"
+  },
+  "features": ["fireflies", "dark", "uppercase", "minimal"],
+  "isPremium": true,
+  "isFeatured": true,
+  "sortOrder": 3,
+  "preview": {
+    "bg": "#0A0A0A",
+    "primary": "#C9A84C",
+    "text": "#E8E8E8"
+  }
+}

@@ -1,0 +1,223 @@
+/* ============================================================
+   OMEGA INVITATION - Theme: Modern Korean
+   Minimalist clean Korean aesthetic
+   ============================================================ */
+
+:root {
+  --theme-primary: #2C2C2C;
+  --theme-secondary: #F8F8F8;
+  --theme-bg: #FFFFFF;
+  --theme-text: #1A1A1A;
+  --theme-accent: #A68A6A;
+  --theme-dark: #0D0D0D;
+  --theme-surface: rgba(0,0,0,0.03);
+  --theme-border: rgba(0,0,0,0.08);
+  --font-display: 'Noto Serif KR', 'Georgia', serif;
+  --font-body: 'Noto Sans KR', sans-serif;
+}
+
+body.theme-modern-korean {
+  background: #FFFFFF;
+}
+
+/* Opening - light minimal */
+.theme-modern-korean .opening-bg {
+  background: #F8F8F8;
+  background-image: linear-gradient(135deg, #F8F8F8 0%, #FFFFFF 100%);
+}
+.theme-modern-korean .opening-label { color: #A68A6A; letter-spacing: 6px; }
+.theme-modern-korean .opening-to,
+.theme-modern-korean .opening-guest-name { color: #2C2C2C; }
+.theme-modern-korean .opening-bride,
+.theme-modern-korean .opening-groom { color: #1A1A1A; }
+.theme-modern-korean .opening-amp { color: #A68A6A; }
+.theme-modern-korean .opening-cta {
+  background: #2C2C2C;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  animation: none;
+}
+.theme-modern-korean .opening-cta:hover {
+  background: #1A1A1A;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+.theme-modern-korean .scroll-hint-line { background: linear-gradient(to bottom, #2C2C2C, transparent); }
+
+/* Hero */
+.theme-modern-korean .section-hero {
+  background: #FFFFFF;
+  min-height: 80vh;
+}
+.theme-modern-korean .hero-overlay { display: none; }
+.theme-modern-korean .hero-bismillah { color: #A68A6A; font-size: clamp(18px, 4vw, 28px); }
+.theme-modern-korean .hero-intro { color: #555; }
+.theme-modern-korean .couple-name { color: #1A1A1A; font-size: clamp(18px, 3.5vw, 26px); }
+.theme-modern-korean .couple-full-name { color: #A68A6A; }
+.theme-modern-korean .couple-parents { color: #888; }
+.theme-modern-korean .couple-photo-frame {
+  border-color: #2C2C2C;
+  border-width: 2px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+.theme-modern-korean .divider-amp { color: #A68A6A; }
+.theme-modern-korean .divider-line { background: linear-gradient(to bottom, transparent, #2C2C2C, transparent); }
+.theme-modern-korean .couple-ig { color: #A68A6A; }
+
+/* Section title */
+.theme-modern-korean .section-title { color: #1A1A1A; font-size: clamp(22px, 4vw, 32px); }
+.theme-modern-korean .section-subtitle { color: #666; }
+.theme-modern-korean .section-divider::before {
+  content: '';
+  width: 40px; height: 1px;
+  background: #2C2C2C;
+  display: block;
+}
+
+/* Countdown */
+.theme-modern-korean .section-countdown { background: #F8F8F8; }
+.theme-modern-korean .countdown-block {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.theme-modern-korean .countdown-number { color: #1A1A1A; }
+.theme-modern-korean .countdown-label { color: #888; }
+.theme-modern-korean .countdown-sep { color: #A68A6A; }
+
+/* Event */
+.theme-modern-korean .section-event { background: #FFFFFF; }
+.theme-modern-korean .event-card {
+  background: #F8F8F8;
+  border-color: rgba(0,0,0,0.06);
+  color: #1A1A1A;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.theme-modern-korean .event-type { color: #A68A6A; letter-spacing: 3px; }
+.theme-modern-korean .event-date,
+.theme-modern-korean .event-location { color: #1A1A1A; }
+.theme-modern-korean .event-time { color: #A68A6A; }
+.theme-modern-korean .event-address { color: #777; }
+.theme-modern-korean .event-map-btn { border-color: #2C2C2C; color: #2C2C2C; }
+.theme-modern-korean .event-map-btn:hover { background: #2C2C2C; color: #fff; }
+.theme-modern-korean .maps-embed-wrapper { border-color: rgba(0,0,0,0.08); }
+.theme-modern-korean .add-calendar-btn {
+  background: #F8F8F8;
+  border-color: rgba(0,0,0,0.1);
+  color: #2C2C2C;
+}
+.theme-modern-korean .add-calendar-btn:hover {
+  background: #2C2C2C;
+  color: #fff;
+  border-color: #2C2C2C;
+}
+
+/* Story */
+.theme-modern-korean .section-story { background: #F8F8F8; }
+.theme-modern-korean .story-timeline::before { background: linear-gradient(to bottom, transparent, #2C2C2C, transparent); }
+.theme-modern-korean .story-item::before { background: #2C2C2C; }
+.theme-modern-korean .story-date { color: #A68A6A; }
+.theme-modern-korean .story-title { color: #1A1A1A; }
+.theme-modern-korean .story-content { color: #555; }
+
+/* Gallery */
+.theme-modern-korean .section-gallery { background: #FFFFFF; }
+
+/* RSVP */
+.theme-modern-korean .section-rsvp { background: #F8F8F8; }
+.theme-modern-korean .rsvp-form,
+.theme-modern-korean .guestbook-form {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.theme-modern-korean .form-label { color: #555; }
+.theme-modern-korean .form-input {
+  background: #F8F8F8;
+  border-color: rgba(0,0,0,0.1);
+  color: #1A1A1A;
+}
+.theme-modern-korean .form-input:focus {
+  border-color: #2C2C2C;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+.theme-modern-korean .form-input::placeholder { color: #AAA; }
+.theme-modern-korean .submit-btn {
+  background: #2C2C2C;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.theme-modern-korean .submit-btn:hover {
+  background: #1A1A1A;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.theme-modern-korean .rsvp-option {
+  background: #F8F8F8;
+  border-color: rgba(0,0,0,0.08);
+  color: #1A1A1A;
+}
+.theme-modern-korean .rsvp-option:has(input:checked) {
+  border-color: #2C2C2C;
+  background: rgba(0,0,0,0.03);
+}
+.theme-modern-korean .rsvp-stats {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,0.06);
+}
+.theme-modern-korean .stat-item { border-right-color: rgba(0,0,0,0.06); }
+.theme-modern-korean .stat-number { color: #1A1A1A; }
+.theme-modern-korean .stat-label { color: #888; }
+
+/* Guestbook */
+.theme-modern-korean .section-guestbook { background: #FFFFFF; }
+.theme-modern-korean .guestbook-message {
+  background: #F8F8F8;
+  border-color: rgba(0,0,0,0.05);
+  color: #1A1A1A;
+}
+.theme-modern-korean .message-name { color: #1A1A1A; }
+.theme-modern-korean .message-time { color: #AAA; }
+.theme-modern-korean .message-text { color: #444; }
+.theme-modern-korean .message-avatar { background: #2C2C2C; color: #fff; }
+.theme-modern-korean .load-more-btn {
+  border-color: rgba(0,0,0,0.1);
+  color: #2C2C2C;
+  background: #F8F8F8;
+}
+
+/* Gift */
+.theme-modern-korean .section-gift { background: #F8F8F8; }
+.theme-modern-korean .gift-account {
+  background: #FFFFFF;
+  border-color: rgba(0,0,0,0.06);
+  color: #1A1A1A;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.theme-modern-korean .gift-bank-name { color: #A68A6A; }
+.theme-modern-korean .gift-account-number,
+.theme-modern-korean .gift-account-name { color: #1A1A1A; }
+.theme-modern-korean .gift-copy-btn { background: #2C2C2C; color: #fff; }
+
+/* Footer */
+.theme-modern-korean .invitation-footer {
+  background: #1A1A1A;
+  color: #F8F8F8;
+  border-top: none;
+}
+.theme-modern-korean .footer-closing { color: rgba(248,248,248,0.6); }
+.theme-modern-korean .footer-couple { color: #A68A6A; }
+.theme-modern-korean .footer-brand-link { color: #A68A6A; }
+
+/* Music */
+.theme-modern-korean .music-controller {
+  background: rgba(26,26,26,0.85);
+  border-color: rgba(255,255,255,0.1);
+}
+.theme-modern-korean .music-btn { background: #2C2C2C; }
+
+/* Pax */
+.theme-modern-korean .pax-btn { color: #2C2C2C; }
+.theme-modern-korean .pax-btn:hover { background: #2C2C2C; color: #fff; }
+.theme-modern-korean .pax-input { color: #1A1A1A; }
+
+/* Scrollbar */
+.theme-modern-korean ::-webkit-scrollbar-thumb { background: rgba(44,44,44,0.3); }

@@ -1,0 +1,25 @@
+{
+  "slug": "champagne-gold",
+  "name": "Champagne Gold",
+  "description": "Hangat dan mewah seperti cahaya champagne",
+  "category": "luxury",
+  "tags": ["champagne", "gold", "warm", "luxury", "light"],
+  "primaryFont": "Bodoni Moda",
+  "secondaryFont": "Didact Gothic",
+  "particles": "gold_dust",
+  "openingAnimation": "sparkle",
+  "sectionAnimation": "golden_reveal",
+  "cssVariables": {
+    "--theme-primary": "#C4922A",
+    "--theme-secondary": "#FBF4E8",
+    "--theme-bg": "#FAF0D7",
+    "--theme-text": "#2A1800",
+    "--theme-accent": "#E8B84B",
+    "--theme-dark": "#150C00"
+  },
+  "features": ["gold_dust", "light_theme", "warm"],
+  "isPremium": true,
+  "isFeatured": false,
+  "sortOrder": 9,
+  "preview": { "bg": "#FAF0D7", "primary": "#C4922A", "text": "#2A1800" }
+}

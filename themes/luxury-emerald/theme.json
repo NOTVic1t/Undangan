@@ -1,0 +1,25 @@
+{
+  "slug": "luxury-emerald",
+  "name": "Luxury Emerald",
+  "description": "Kemewahan hijau zamrud yang memukau dan menyegarkan",
+  "category": "luxury",
+  "tags": ["emerald", "green", "luxury", "jewel", "fresh"],
+  "primaryFont": "Cormorant Garamond",
+  "secondaryFont": "Montserrat",
+  "particles": "fireflies",
+  "openingAnimation": "jewel_reveal",
+  "sectionAnimation": "emerald_fade",
+  "cssVariables": {
+    "--theme-primary": "#1A6B4A",
+    "--theme-secondary": "#EBF5EE",
+    "--theme-bg": "#F5FAF7",
+    "--theme-text": "#0A2E1A",
+    "--theme-accent": "#2ECC71",
+    "--theme-dark": "#041A0D"
+  },
+  "features": ["fireflies", "light_theme", "jewel"],
+  "isPremium": true,
+  "isFeatured": false,
+  "sortOrder": 10,
+  "preview": { "bg": "#F5FAF7", "primary": "#1A6B4A", "text": "#0A2E1A" }
+}

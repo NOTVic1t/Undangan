@@ -1,0 +1,178 @@
+/* ============================================================
+   OMEGA INVITATION - Theme: Luxury Sakura
+   Romantic pink with cherry blossom petals
+   ============================================================ */
+
+:root {
+  --theme-primary: #C4637A;
+  --theme-secondary: #F9EEF1;
+  --theme-bg: #FDF6F8;
+  --theme-text: #3D1A24;
+  --theme-accent: #E891A8;
+  --theme-dark: #2A0F17;
+  --theme-surface: rgba(196,99,122,0.06);
+  --theme-border: rgba(196,99,122,0.18);
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+body.theme-luxury-sakura {
+  background: var(--theme-bg);
+  background-image: radial-gradient(ellipse at 30% 10%, rgba(249,168,192,0.12) 0%, transparent 50%);
+}
+
+.theme-luxury-sakura .opening-bg {
+  background: linear-gradient(135deg, #2A0F17 0%, #4A1525 50%, #2A0F17 100%);
+}
+
+.theme-luxury-sakura .opening-bride,
+.theme-luxury-sakura .opening-groom { color: #F9EEF1; }
+.theme-luxury-sakura .opening-amp,
+.theme-luxury-sakura .opening-guest-name,
+.theme-luxury-sakura .opening-label { color: #E891A8; }
+
+.theme-luxury-sakura .opening-cta {
+  background: linear-gradient(135deg, #C4637A, #E891A8);
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(196,99,122,0.4);
+}
+
+/* Hero on light bg */
+.theme-luxury-sakura .section-hero {
+  background: linear-gradient(to bottom, #FDF6F8, #F9EEF1);
+}
+
+.theme-luxury-sakura .hero-bismillah,
+.theme-luxury-sakura .hero-intro { color: #3D1A24; }
+
+.theme-luxury-sakura .section-title { color: #C4637A; }
+
+.theme-luxury-sakura .couple-photo-frame {
+  border-color: #C4637A;
+  box-shadow: 0 8px 40px rgba(196,99,122,0.2);
+}
+
+.theme-luxury-sakura .couple-name { color: #3D1A24; }
+.theme-luxury-sakura .couple-full-name { color: #C4637A; }
+
+/* Countdown */
+.theme-luxury-sakura .section-countdown {
+  background: linear-gradient(135deg, #F9EEF1, #FDF6F8);
+}
+.theme-luxury-sakura .countdown-block {
+  background: rgba(196,99,122,0.06);
+  border-color: rgba(196,99,122,0.2);
+}
+.theme-luxury-sakura .countdown-number { color: #C4637A; }
+
+/* Event section */
+.theme-luxury-sakura .section-event { background: #fff; }
+.theme-luxury-sakura .event-card {
+  background: rgba(196,99,122,0.04);
+  border-color: rgba(196,99,122,0.15);
+  color: #3D1A24;
+}
+.theme-luxury-sakura .event-date,
+.theme-luxury-sakura .event-location { color: #3D1A24; }
+.theme-luxury-sakura .event-time { color: #C4637A; }
+.theme-luxury-sakura .event-address { color: #666; }
+.theme-luxury-sakura .event-map-btn {
+  border-color: #C4637A;
+  color: #C4637A;
+}
+.theme-luxury-sakura .event-map-btn:hover {
+  background: #C4637A;
+  color: #fff;
+}
+.theme-luxury-sakura .add-calendar-btn {
+  background: rgba(196,99,122,0.06);
+  border-color: rgba(196,99,122,0.2);
+  color: #3D1A24;
+}
+
+/* Story */
+.theme-luxury-sakura .section-story { background: #FDF6F8; }
+.theme-luxury-sakura .story-timeline::before { background: linear-gradient(to bottom, transparent, #C4637A, transparent); }
+.theme-luxury-sakura .story-item::before { background: #C4637A; }
+.theme-luxury-sakura .story-title { color: #3D1A24; }
+
+/* Gallery */
+.theme-luxury-sakura .section-gallery { background: #fff; }
+
+/* RSVP */
+.theme-luxury-sakura .section-rsvp { background: #FDF6F8; }
+.theme-luxury-sakura .rsvp-form,
+.theme-luxury-sakura .guestbook-form {
+  background: rgba(196,99,122,0.04);
+  border-color: rgba(196,99,122,0.15);
+}
+.theme-luxury-sakura .form-label { color: #C4637A; }
+.theme-luxury-sakura .form-input {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(196,99,122,0.2);
+  color: #3D1A24;
+}
+.theme-luxury-sakura .form-input:focus {
+  border-color: #C4637A;
+  box-shadow: 0 0 0 3px rgba(196,99,122,0.12);
+}
+.theme-luxury-sakura .form-input::placeholder { color: rgba(61,26,36,0.35); }
+.theme-luxury-sakura .submit-btn {
+  background: #C4637A;
+  box-shadow: 0 8px 24px rgba(196,99,122,0.3);
+}
+.theme-luxury-sakura .submit-btn:hover { background: #B0566B; }
+.theme-luxury-sakura .rsvp-option {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(196,99,122,0.15);
+}
+.theme-luxury-sakura .rsvp-option:has(input:checked) {
+  border-color: #C4637A;
+  background: rgba(196,99,122,0.08);
+}
+.theme-luxury-sakura .stat-card-body .stat-number { color: #C4637A; }
+
+/* Guestbook */
+.theme-luxury-sakura .section-guestbook { background: #FDF6F8; }
+.theme-luxury-sakura .guestbook-message {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(196,99,122,0.12);
+  color: #3D1A24;
+}
+.theme-luxury-sakura .message-name { color: #3D1A24; }
+.theme-luxury-sakura .message-text { color: #3D1A24; }
+.theme-luxury-sakura .message-avatar { background: linear-gradient(135deg, #C4637A, #E891A8); color: #fff; }
+
+/* Gift */
+.theme-luxury-sakura .section-gift { background: #fff; }
+.theme-luxury-sakura .gift-account { background: rgba(196,99,122,0.04); border-color: rgba(196,99,122,0.15); color: #3D1A24; }
+.theme-luxury-sakura .gift-bank-name { color: #C4637A; }
+.theme-luxury-sakura .gift-account-number,
+.theme-luxury-sakura .gift-account-name { color: #3D1A24; }
+.theme-luxury-sakura .gift-copy-btn { background: #C4637A; color: #fff; }
+
+/* Footer */
+.theme-luxury-sakura .invitation-footer {
+  background: linear-gradient(to top, #2A0F17, #4A1525);
+  color: #F9EEF1;
+}
+.theme-luxury-sakura .footer-couple { color: #E891A8; }
+.theme-luxury-sakura .footer-branding { color: rgba(249,238,241,0.4); }
+
+/* Music controller */
+.theme-luxury-sakura .music-controller {
+  background: rgba(42,15,23,0.8);
+  border-color: rgba(196,99,122,0.3);
+}
+.theme-luxury-sakura .music-btn { background: #C4637A; }
+.theme-luxury-sakura .music-icon span { background: #fff; }
+
+/* Section backgrounds alternate */
+.theme-luxury-sakura .section:nth-child(even) { background: #fff; }
+.theme-luxury-sakura .section:nth-child(odd) { background: #FDF6F8; }
+
+/* Section divider */
+.theme-luxury-sakura .section-divider::before { content: '✿'; color: #C4637A; font-size: 16px; }
+
+/* Petal color override */
+.theme-luxury-sakura .petal { filter: hue-rotate(330deg) saturate(1.2); }

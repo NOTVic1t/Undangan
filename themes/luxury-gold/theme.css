@@ -1,0 +1,154 @@
+/* ============================================================
+   OMEGA INVITATION - Theme: Luxury Gold
+   Complete theme overrides and unique styling
+   ============================================================ */
+
+/* Google Fonts loaded dynamically by theme engine */
+
+/* ---- Theme Variables ---- */
+:root {
+  --theme-primary: #C9A84C;
+  --theme-secondary: #F5E6C8;
+  --theme-bg: #1A1209;
+  --theme-text: #F5E6C8;
+  --theme-accent: #E8C97A;
+  --theme-dark: #0D0904;
+  --theme-surface: rgba(201,168,76,0.06);
+  --theme-border: rgba(201,168,76,0.2);
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+/* ---- Body ---- */
+.theme-luxury-gold body,
+body.theme-luxury-gold {
+  background: var(--theme-bg);
+  background-image:
+    radial-gradient(ellipse at 10% 20%, rgba(201,168,76,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(201,168,76,0.03) 0%, transparent 50%);
+}
+
+/* ---- Opening Screen ---- */
+.theme-luxury-gold .opening-bg {
+  background: linear-gradient(135deg, #0D0904 0%, #1A1209 40%, #0D0904 100%);
+}
+
+.theme-luxury-gold .opening-cta {
+  background: linear-gradient(135deg, #C9A84C, #E8C97A, #C9A84C);
+  background-size: 200% 100%;
+  animation: goldShimmer 3s ease infinite, pulseCta 3s ease infinite;
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- Section Ornaments ---- */
+.theme-luxury-gold .section-divider::before {
+  content: '✦';
+  font-size: 14px;
+  color: var(--theme-primary);
+}
+
+/* ---- Hero ---- */
+.theme-luxury-gold .hero-bismillah {
+  background: linear-gradient(135deg, #C9A84C, #E8C97A, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 12px rgba(201,168,76,0.3));
+}
+
+.theme-luxury-gold .couple-photo-frame {
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 1px rgba(201,168,76,0.15), 0 8px 40px rgba(0,0,0,0.5);
+}
+
+.theme-luxury-gold .couple-photo-frame::before {
+  content: '';
+  position: absolute; inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.2);
+  pointer-events: none;
+}
+
+/* ---- Countdown ---- */
+.theme-luxury-gold .countdown-block {
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.04));
+  border-color: rgba(201,168,76,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-luxury-gold .countdown-block::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.5), transparent);
+}
+
+/* ---- Event Cards ---- */
+.theme-luxury-gold .event-card {
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%);
+  border-color: rgba(201,168,76,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-luxury-gold .event-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+}
+
+/* ---- RSVP & Forms ---- */
+.theme-luxury-gold .rsvp-form,
+.theme-luxury-gold .guestbook-form {
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(0,0,0,0) 100%);
+  border-color: rgba(201,168,76,0.2);
+}
+
+.theme-luxury-gold .form-input {
+  background: rgba(201,168,76,0.04);
+  border-color: rgba(201,168,76,0.15);
+}
+
+.theme-luxury-gold .form-input:focus {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+}
+
+/* ---- Guestbook Messages ---- */
+.theme-luxury-gold .guestbook-message {
+  border-color: rgba(201,168,76,0.1);
+}
+
+.theme-luxury-gold .message-avatar {
+  background: linear-gradient(135deg, #C9A84C, #E8C97A);
+}
+
+/* ---- Footer ---- */
+.theme-luxury-gold .invitation-footer {
+  background: linear-gradient(to top, #0D0904, #1A1209);
+  border-top-color: rgba(201,168,76,0.15);
+}
+
+/* ---- Scrollbar ---- */
+.theme-luxury-gold ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.4); }
+
+/* ---- Gold Corner Ornaments on sections ---- */
+.theme-luxury-gold .section::before,
+.theme-luxury-gold .section::after {
+  content: '';
+  position: absolute;
+  width: 60px; height: 60px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M0,0 L20,0 L20,2 L2,2 L2,20 L0,20 Z' fill='rgba(201,168,76,0.3)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.theme-luxury-gold .section::before { top: 0; left: 0; }
+.theme-luxury-gold .section::after { bottom: 0; right: 0; transform: rotate(180deg); }

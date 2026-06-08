@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>OMEGA Invitation</title>
+  <meta name="description" content="Platform Undangan Digital Pernikahan Premium" />
+  <meta name="theme-color" content="#1A1209" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: #0F0F13;
+      color: #E8E8F0;
+      font-family: -apple-system, 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .splash { text-align: center; padding: 40px; }
+    .splash-logo { font-size: 56px; color: #C9A84C; font-weight: 700; letter-spacing: 4px; margin-bottom: 6px; }
+    .splash-sub { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 40px; }
+    .splash-spinner { width: 28px; height: 28px; border: 2px solid rgba(201,168,76,0.15); border-top-color: #C9A84C; border-radius: 50%; margin: 0 auto; animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .splash-links { margin-top: 32px; display: none; flex-direction: column; align-items: center; gap: 12px; }
+    .splash-link { padding: 10px 24px; background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.25); color: #C9A84C; font-size: 13px; text-decoration: none; border-radius: 8px; transition: all 0.2s; }
+    .splash-link:hover { background: #C9A84C; color: #0F0F13; }
+  </style>
+</head>
+<body>
+  <div class="splash">
+    <div class="splash-logo">Ω</div>
+    <div class="splash-sub">OMEGA Invitation</div>
+    <div class="splash-spinner" id="splash-spinner"></div>
+    <div class="splash-links" id="splash-links">
+      <a class="splash-link" href="/admin/">Panel Admin</a>
+    </div>
+  </div>
+  <script>
+    (function () {
+      // Handle GitHub Pages SPA redirect from 404.html
+      var redirectPath = sessionStorage.getItem('omega_redirect');
+      if (redirectPath) {
+        sessionStorage.removeItem('omega_redirect');
+        var match = redirectPath.match(/^\/i\/([^/?#]+)(.*)/);
+        if (match) {
+          var slug = match[1];
+          var rest = match[2] || '';
+          window.location.replace('/invitation.html?slug=' + encodeURIComponent(slug) + (rest ? '&' + rest.replace(/^\?/, '') : ''));
+          return;
+        }
+      }
+
+      // Check direct params
+      var params = new URLSearchParams(window.location.search);
+      var slug = params.get('slug') || params.get('s');
+      if (slug) {
+        var dest = '/invitation.html?slug=' + encodeURIComponent(slug);
+        var to = params.get('to');
+        var code = params.get('code');
+        if (to) dest += '&to=' + encodeURIComponent(to);
+        if (code) dest += '&code=' + encodeURIComponent(code);
+        window.location.replace(dest);
+        return;
+      }
+
+      // No slug - show landing with admin link
+      document.getElementById('splash-spinner').style.display = 'none';
+      document.getElementById('splash-links').style.display = 'flex';
+    })();
+  </script>
+</body>
+</html>

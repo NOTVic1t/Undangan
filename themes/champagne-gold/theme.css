@@ -1,0 +1,46 @@
+/* ============================================================
+   OMEGA - Theme: Champagne Gold
+   Warm champagne with golden sparkle
+   ============================================================ */
+:root{--theme-primary:#C4922A;--theme-secondary:#FBF4E8;--theme-bg:#FAF0D7;--theme-text:#2A1800;--theme-accent:#E8B84B;--theme-dark:#150C00;--theme-surface:rgba(196,146,42,0.07);--theme-border:rgba(196,146,42,0.18);--font-display:'Bodoni Moda',Georgia,serif;--font-body:'Didact Gothic',sans-serif;}
+body.theme-champagne-gold{background:#FAF0D7;}
+.theme-champagne-gold .opening-bg{background:linear-gradient(135deg,#150C00,#2A1800,#150C00);}
+.theme-champagne-gold .opening-bride,.theme-champagne-gold .opening-groom{color:#FBF4E8;}
+.theme-champagne-gold .opening-amp,.theme-champagne-gold .opening-guest-name{color:#E8B84B;}
+.theme-champagne-gold .opening-cta{background:linear-gradient(135deg,#C4922A,#E8B84B,#C4922A);background-size:200%;color:#150C00;font-weight:700;animation:goldShimmer 3s ease infinite,pulseCta 3s ease infinite;}
+@keyframes goldShimmer{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.theme-champagne-gold .section-hero{background:linear-gradient(to bottom,#FAF0D7,#FBF4E8);}
+.theme-champagne-gold .hero-overlay{display:none;}
+.theme-champagne-gold .hero-bismillah{color:#C4922A;}
+.theme-champagne-gold .section-title{color:#C4922A;}
+.theme-champagne-gold .couple-name{color:#2A1800;}
+.theme-champagne-gold .couple-full-name{color:#C4922A;}
+.theme-champagne-gold .couple-photo-frame{border-color:#C4922A;box-shadow:0 8px 40px rgba(196,146,42,0.15);}
+.theme-champagne-gold .divider-amp{color:#C4922A;}
+.theme-champagne-gold .section-countdown{background:#FBF4E8;}
+.theme-champagne-gold .countdown-block{background:rgba(255,255,255,0.7);border-color:rgba(196,146,42,0.2);}
+.theme-champagne-gold .countdown-number{color:#C4922A;}
+.theme-champagne-gold .event-card{background:rgba(255,255,255,0.8);border-color:rgba(196,146,42,0.15);color:#2A1800;}
+.theme-champagne-gold .event-type,.theme-champagne-gold .event-time{color:#C4922A;}
+.theme-champagne-gold .event-map-btn{border-color:#C4922A;color:#C4922A;}
+.theme-champagne-gold .event-map-btn:hover{background:#C4922A;color:#fff;}
+.theme-champagne-gold .section-rsvp,.theme-champagne-gold .section-guestbook{background:#FAF0D7;}
+.theme-champagne-gold .rsvp-form,.theme-champagne-gold .guestbook-form{background:rgba(255,255,255,0.8);border-color:rgba(196,146,42,0.15);}
+.theme-champagne-gold .form-label{color:#C4922A;}
+.theme-champagne-gold .form-input{background:rgba(255,255,255,0.9);border-color:rgba(196,146,42,0.2);color:#2A1800;}
+.theme-champagne-gold .form-input:focus{border-color:#C4922A;box-shadow:0 0 0 3px rgba(196,146,42,0.1);}
+.theme-champagne-gold .form-input::placeholder{color:rgba(42,24,0,0.3);}
+.theme-champagne-gold .submit-btn{background:#C4922A;color:#fff;box-shadow:0 8px 24px rgba(196,146,42,0.3);}
+.theme-champagne-gold .rsvp-option{background:rgba(255,255,255,0.6);border-color:rgba(196,146,42,0.15);color:#2A1800;}
+.theme-champagne-gold .rsvp-option:has(input:checked){border-color:#C4922A;background:rgba(196,146,42,0.08);}
+.theme-champagne-gold .stat-number{color:#C4922A;}
+.theme-champagne-gold .guestbook-message{background:rgba(255,255,255,0.8);border-color:rgba(196,146,42,0.1);color:#2A1800;}
+.theme-champagne-gold .message-avatar{background:linear-gradient(135deg,#C4922A,#E8B84B);color:#fff;}
+.theme-champagne-gold .story-item::before{background:#C4922A;}
+.theme-champagne-gold .story-date{color:#C4922A;}
+.theme-champagne-gold .story-title{color:#2A1800;}
+.theme-champagne-gold .gift-copy-btn{background:#C4922A;color:#fff;}
+.theme-champagne-gold .invitation-footer{background:linear-gradient(to top,#150C00,#2A1800);color:#FBF4E8;}
+.theme-champagne-gold .footer-couple{color:#E8B84B;}
+.theme-champagne-gold .music-btn{background:#C4922A;}
+.theme-champagne-gold .section-divider::before{content:'◇';font-size:14px;color:#C4922A;}

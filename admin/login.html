@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — OMEGA Invitation Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0F0F13;
+      color: #E8E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .login-bg {
+      position: fixed; inset: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .login-card {
+      background: #17171D;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+      animation: cardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .logo-mark {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #6366F1, #818CF8);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 700;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; }
+    .logo-sub { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9898A8; }
+
+    h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; font-family: 'Syne', sans-serif; }
+    .login-subtitle { font-size: 14px; color: #9898A8; margin-bottom: 28px; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-label {
+      display: block;
+      font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: #9898A8;
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 14px;
+      background: #1E1E26;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      color: #E8E8F0;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #6366F1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+    }
+
+    .form-input::placeholder { color: rgba(255,255,255,0.2); }
+
+    .password-wrapper { position: relative; }
+    .password-toggle {
+      position: absolute; right: 14px; top: 50%;
+      transform: translateY(-50%);
+      background: none; border: none;
+      color: #9898A8; cursor: pointer;
+      font-size: 16px;
+      padding: 4px;
+      transition: color 0.2s;
+    }
+    .password-toggle:hover { color: #E8E8F0; }
+
+    .form-error {
+      font-size: 12px; color: #EF4444;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      color: #6366F1;
+      margin-top: 6px;
+      text-decoration: none;
+    }
+    .forgot-link:hover { text-decoration: underline; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #6366F1;
+      color: #fff;
+      font-size: 14px; font-weight: 700;
+      border: none; border-radius: 10px;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: inherit;
+    }
+
+    .submit-btn:hover:not(:disabled) {
+      background: #4F52DB;
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(99,102,241,0.35);
+    }
+
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .btn-loader {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .login-divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 24px 0;
+    }
+    .login-divider::before, .login-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+    .login-divider span { font-size: 12px; color: #9898A8; }
+
+    .register-link {
+      text-align: center;
+      font-size: 13px;
+      color: #9898A8;
+    }
+    .register-link a { color: #6366F1; text-decoration: none; font-weight: 600; }
+    .register-link a:hover { text-decoration: underline; }
+
+    .alert {
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .alert-error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.2); color: #EF4444; }
+    .alert-success { background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); color: #10B981; }
+
+    /* Register form - hidden by default */
+    #register-section { display: none; }
+
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="login-bg" aria-hidden="true"></div>
+
+  <div class="login-card" role="main">
+    <div class="login-logo">
+      <div class="logo-mark" aria-hidden="true">Ω</div>
+      <div class="logo-text">
+        <span class="logo-name">OMEGA</span>
+        <span class="logo-sub">Invitation Admin</span>
+      </div>
+    </div>
+
+    <!-- LOGIN SECTION -->
+    <div id="login-section">
+      <h1>Selamat Datang</h1>
+      <p class="login-subtitle">Masuk ke panel admin Anda</p>
+
+      <div class="alert alert-error" id="login-error" role="alert"></div>
+      <div class="alert alert-success" id="login-success" role="alert"></div>
+
+      <form id="login-form" novalidate aria-label="Form login">
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email</label>
+          <input
+            class="form-input" type="email" id="login-email"
+            placeholder="admin@omega-invite.com"
+            required autocomplete="email"
+            aria-label="Alamat email"
+          />
+          <div class="form-error" id="email-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="login-password">Password</label>
+          <div class="password-wrapper">
+            <input
+              class="form-input" type="password" id="login-password"
+              placeholder="••••••••"
+              required autocomplete="current-password"
+              aria-label="Password"
+            />
+            <button type="button" class="password-toggle" id="toggle-password" aria-label="Tampilkan/sembunyikan password">
+              👁️
+            </button>
+          </div>
+          <div class="form-error" id="password-error"></div>
+          <a href="#" class="forgot-link" id="forgot-link">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="submit-btn" id="login-btn" aria-label="Masuk">
+          <span class="btn-text">Masuk</span>
+          <span class="btn-loader hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div class="login-divider"><span>atau</span></div>
+      <div class="register-link">
+        Belum punya akun? <a href="#" id="show-register">Daftar Sekarang</a>
+      </div>
+    </div>
+
+    <!-- REGISTER SECTION -->
+    <div id="register-section" aria-label="Form registrasi">
+      <h1>Buat Akun</h1>
+      <p class="login-subtitle">Daftar sebagai customer baru</p>
+
+      <div class="alert alert-error" id="register-error" role="alert"></div>
+
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="reg-name">Nama Lengkap</label>
+          <input class="form-input" type="text" id="reg-name" placeholder="Nama lengkap Anda" required autocomplete="name" aria-label="Nama lengkap" maxlength="200" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email</label>
+          <input class="form-input" type="email" id="reg-email" placeholder="email@domain.com" required autocomplete="email" aria-label="Email" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reg-phone">Nomor WhatsApp</label>
+          <input class="form-input" type="tel" id="reg-phone" placeholder="08xxxxxxxxxx" autocomplete="tel" aria-label="Nomor WhatsApp" maxlength="20" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Password</label>
+          <div class="password-wrapper">
+            <input class="form-input" type="password" id="reg-password" placeholder="Minimal 8 karakter" required autocomplete="new-password" aria-label="Password baru" minlength="8" />
+            <button type="button" class="password-toggle" id="toggle-reg-password" aria-label="Tampilkan/sembunyikan password">👁️</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reg-password-confirm">Konfirmasi Password</label>
+          <input class="form-input" type="password" id="reg-password-confirm" placeholder="Ulangi password" required autocomplete="new-password" aria-label="Konfirmasi password" />
+        </div>
+
+        <button type="submit" class="submit-btn" id="register-btn" aria-label="Daftar">
+          <span class="btn-text">Buat Akun</span>
+          <span class="btn-loader hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div class="login-divider"><span>atau</span></div>
+      <div class="register-link">
+        Sudah punya akun? <a href="#" id="show-login">Masuk</a>
+      </div>
+    </div>
+
+    <!-- FORGOT PASSWORD SECTION -->
+    <div id="forgot-section" style="display:none" aria-label="Form lupa password">
+      <h1>Reset Password</h1>
+      <p class="login-subtitle">Masukkan email Anda untuk menerima link reset password</p>
+
+      <div class="alert alert-error" id="forgot-error" role="alert"></div>
+      <div class="alert alert-success" id="forgot-success" role="alert"></div>
+
+      <form id="forgot-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="forgot-email">Email</label>
+          <input class="form-input" type="email" id="forgot-email" placeholder="email@domain.com" required autocomplete="email" aria-label="Email" />
+        </div>
+        <button type="submit" class="submit-btn" id="forgot-btn" aria-label="Kirim link reset">
+          <span class="btn-text">Kirim Link Reset</span>
+          <span class="btn-loader hidden" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <div class="login-divider"><span>atau</span></div>
+      <div class="register-link">
+        <a href="#" id="back-to-login">← Kembali ke Login</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="/config/supabase.js"></script>
+  <script src="/core/omega.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // Check if already logged in
+      async function checkAuth() {
+        const session = await OMEGA.auth.getSession();
+        if (session) window.location.href = '/admin/';
+      }
+      checkAuth();
+
+      // ---- Section switching ----
+      function showSection(name) {
+        ['login', 'register', 'forgot'].forEach(s => {
+          document.getElementById(`${s}-section`).style.display = s === name ? '' : 'none';
+        });
+      }
+
+      document.getElementById('show-register')?.addEventListener('click', (e) => { e.preventDefault(); showSection('register'); });
+      document.getElementById('show-login')?.addEventListener('click', (e) => { e.preventDefault(); showSection('login'); });
+      document.getElementById('forgot-link')?.addEventListener('click', (e) => { e.preventDefault(); showSection('forgot'); });
+      document.getElementById('back-to-login')?.addEventListener('click', (e) => { e.preventDefault(); showSection('login'); });
+
+      // ---- Password toggles ----
+      function bindPasswordToggle(btnId, inputId) {
+        document.getElementById(btnId)?.addEventListener('click', () => {
+          const input = document.getElementById(inputId);
+          if (!input) return;
+          input.type = input.type === 'password' ? 'text' : 'password';
+        });
+      }
+      bindPasswordToggle('toggle-password', 'login-password');
+      bindPasswordToggle('toggle-reg-password', 'reg-password');
+
+      // ---- Helpers ----
+      function setLoading(formPrefix, loading) {
+        const btn = document.getElementById(`${formPrefix}-btn`);
+        const text = btn?.querySelector('.btn-text');
+        const loader = btn?.querySelector('.btn-loader');
+        if (btn) btn.disabled = loading;
+        if (text) text.style.display = loading ? 'none' : '';
+        if (loader) loader.style.display = loading ? '' : 'none';
+      }
+
+      function showAlert(id, message) {
+        const el = document.getElementById(id);
+        if (el) { el.textContent = message; el.style.display = ''; }
+      }
+
+      function hideAlerts(...ids) {
+        ids.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = 'none';
+        });
+      }
+
+      // ---- LOGIN ----
+      document.getElementById('login-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideAlerts('login-error', 'login-success');
+
+        const email = document.getElementById('login-email').value.trim();
+        const password = document.getElementById('login-password').value;
+
+        if (!email) { showAlert('login-error', 'Email wajib diisi'); return; }
+        if (!password) { showAlert('login-error', 'Password wajib diisi'); return; }
+
+        setLoading('login', true);
+        try {
+          await OMEGA.auth.signIn(email, password);
+          showAlert('login-success', 'Login berhasil! Mengalihkan...');
+          setTimeout(() => { window.location.href = '/admin/'; }, 800);
+        } catch (err) {
+          const msgs = {
+            'Invalid login credentials': 'Email atau password salah',
+            'Email not confirmed': 'Silakan konfirmasi email Anda terlebih dahulu',
+            'Too many requests': 'Terlalu banyak percobaan. Coba lagi nanti.',
+          };
+          showAlert('login-error', msgs[err.message] || err.message || 'Login gagal');
+          setLoading('login', false);
+        }
+      });
+
+      // ---- REGISTER ----
+      document.getElementById('register-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideAlerts('register-error');
+
+        const name = document.getElementById('reg-name').value.trim();
+        const email = document.getElementById('reg-email').value.trim();
+        const phone = document.getElementById('reg-phone').value.trim();
+        const password = document.getElementById('reg-password').value;
+        const confirm = document.getElementById('reg-password-confirm').value;
+
+        if (!name) { showAlert('register-error', 'Nama wajib diisi'); return; }
+        if (!email) { showAlert('register-error', 'Email wajib diisi'); return; }
+        if (password.length < 8) { showAlert('register-error', 'Password minimal 8 karakter'); return; }
+        if (password !== confirm) { showAlert('register-error', 'Konfirmasi password tidak cocok'); return; }
+
+        setLoading('register', true);
+        try {
+          const { data } = await OMEGA.auth.signUp(email, password, name);
+
+          // Create profile
+          if (data.user) {
+            const sb = OMEGA.getSupabase();
+            await sb.from('profiles').upsert({
+              id: data.user.id,
+              full_name: name,
+              email: email,
+              phone: phone || null,
+              role: 'customer',
+            });
+          }
+
+          showSection('login');
+          showAlert('login-success', 'Akun berhasil dibuat! Silakan cek email untuk konfirmasi.');
+        } catch (err) {
+          const msgs = {
+            'User already registered': 'Email sudah terdaftar. Silakan login.',
+            'Password should be at least 6 characters': 'Password minimal 6 karakter',
+          };
+          showAlert('register-error', msgs[err.message] || err.message || 'Pendaftaran gagal');
+        } finally {
+          setLoading('register', false);
+        }
+      });
+
+      // ---- FORGOT PASSWORD ----
+      document.getElementById('forgot-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        hideAlerts('forgot-error', 'forgot-success');
+
+        const email = document.getElementById('forgot-email').value.trim();
+        if (!email) { showAlert('forgot-error', 'Email wajib diisi'); return; }
+
+        setLoading('forgot', true);
+        try {
+          const sb = OMEGA.getSupabase();
+          const { error } = await sb.auth.resetPasswordForEmail(email, {
+            redirectTo: `${window.location.origin}/admin/reset-password.html`,
+          });
+          if (error) throw error;
+          showAlert('forgot-success', 'Link reset password telah dikirim ke email Anda. Silakan cek inbox.');
+        } catch (err) {
+          showAlert('forgot-error', err.message || 'Gagal mengirim email reset');
+        } finally {
+          setLoading('forgot', false);
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>

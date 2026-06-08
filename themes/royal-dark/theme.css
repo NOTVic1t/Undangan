@@ -1,0 +1,52 @@
+/* ============================================================
+   OMEGA - Theme: Royal Dark
+   Regal dark with deep gold royalty aesthetic
+   ============================================================ */
+:root{--theme-primary:#8B6914;--theme-secondary:#1C1208;--theme-bg:#100A04;--theme-text:#F0D080;--theme-accent:#D4AF37;--theme-dark:#080503;--theme-surface:rgba(139,105,20,0.08);--theme-border:rgba(139,105,20,0.2);--font-display:'Cinzel Decorative',Georgia,serif;--font-body:'Crimson Pro',serif;}
+body.theme-royal-dark{background:#100A04;}
+.theme-royal-dark .opening-bg{background:radial-gradient(ellipse at 50% 40%,#1C1208 0%,#100A04 60%,#080503 100%);}
+.theme-royal-dark .opening-label{letter-spacing:8px;font-size:9px;color:#D4AF37;}
+.theme-royal-dark .opening-bride,.theme-royal-dark .opening-groom{color:#F0D080;letter-spacing:3px;font-size:clamp(18px,4vw,34px);}
+.theme-royal-dark .opening-amp{color:#D4AF37;font-size:clamp(24px,6vw,44px);}
+.theme-royal-dark .opening-cta{background:linear-gradient(135deg,#8B6914,#D4AF37,#8B6914);background-size:200%;color:#100A04;font-weight:700;letter-spacing:3px;font-size:11px;border-radius:2px;animation:goldShimmer 3s ease infinite;}
+@keyframes goldShimmer{0%{background-position:0%}50%{background-position:100%}100%{background-position:0%}}
+.theme-royal-dark .hero-bismillah{color:#D4AF37;text-shadow:0 0 20px rgba(212,175,55,0.4);}
+.theme-royal-dark .couple-name{color:#F0D080;letter-spacing:2px;text-transform:uppercase;font-size:clamp(14px,3vw,20px);}
+.theme-royal-dark .couple-full-name{color:#D4AF37;}
+.theme-royal-dark .couple-photo-frame{border-color:#D4AF37;box-shadow:0 0 0 1px rgba(212,175,55,0.1),0 8px 40px rgba(0,0,0,0.8);}
+.theme-royal-dark .divider-amp{color:#D4AF37;text-shadow:0 0 20px rgba(212,175,55,0.3);}
+.theme-royal-dark .section-title{color:#D4AF37;letter-spacing:3px;text-transform:uppercase;font-size:clamp(16px,3.5vw,24px);}
+.theme-royal-dark .section-countdown{background:#0A0602;}
+.theme-royal-dark .countdown-block{background:rgba(212,175,55,0.05);border-color:rgba(212,175,55,0.15);border-radius:2px;}
+.theme-royal-dark .countdown-number{background:linear-gradient(135deg,#8B6914,#D4AF37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.theme-royal-dark .event-card{background:rgba(212,175,55,0.04);border-color:rgba(212,175,55,0.12);border-radius:2px;}
+.theme-royal-dark .event-type{color:#D4AF37;letter-spacing:4px;font-size:9px;}
+.theme-royal-dark .event-date{color:#F0D080;}
+.theme-royal-dark .event-time{color:#D4AF37;}
+.theme-royal-dark .event-map-btn{border-color:rgba(212,175,55,0.4);color:#D4AF37;border-radius:0;letter-spacing:2px;font-size:10px;}
+.theme-royal-dark .event-map-btn:hover{background:#D4AF37;color:#100A04;}
+.theme-royal-dark .form-label{color:#D4AF37;letter-spacing:2px;font-size:10px;}
+.theme-royal-dark .form-input{background:rgba(212,175,55,0.04);border-color:rgba(212,175,55,0.15);color:#F0D080;}
+.theme-royal-dark .form-input:focus{border-color:#D4AF37;box-shadow:0 0 0 2px rgba(212,175,55,0.1);}
+.theme-royal-dark .form-input::placeholder{color:rgba(240,208,128,0.3);}
+.theme-royal-dark .submit-btn{background:transparent;border:1px solid #D4AF37;color:#D4AF37;border-radius:0;letter-spacing:3px;font-size:11px;}
+.theme-royal-dark .submit-btn:hover{background:#D4AF37;color:#100A04;}
+.theme-royal-dark .rsvp-form,.theme-royal-dark .guestbook-form{background:rgba(212,175,55,0.03);border-color:rgba(212,175,55,0.12);border-radius:2px;}
+.theme-royal-dark .rsvp-option{background:rgba(212,175,55,0.04);border-color:rgba(212,175,55,0.1);}
+.theme-royal-dark .rsvp-option:has(input:checked){border-color:#D4AF37;background:rgba(212,175,55,0.08);}
+.theme-royal-dark .stat-number{color:#D4AF37;}
+.theme-royal-dark .guestbook-message{background:rgba(212,175,55,0.03);border-color:rgba(212,175,55,0.08);}
+.theme-royal-dark .message-avatar{background:transparent;border:1px solid #D4AF37;color:#D4AF37;}
+.theme-royal-dark .story-timeline::before{background:linear-gradient(to bottom,transparent,#D4AF37,transparent);}
+.theme-royal-dark .story-item::before{background:#D4AF37;}
+.theme-royal-dark .story-date{color:#D4AF37;}
+.theme-royal-dark .gift-account{background:rgba(212,175,55,0.04);border-color:rgba(212,175,55,0.12);border-radius:2px;}
+.theme-royal-dark .gift-bank-name{color:#D4AF37;}
+.theme-royal-dark .gift-copy-btn{background:transparent;border:1px solid #D4AF37;color:#D4AF37;border-radius:0;}
+.theme-royal-dark .gift-copy-btn:hover{background:#D4AF37;color:#100A04;}
+.theme-royal-dark .invitation-footer{background:#080503;border-top-color:rgba(212,175,55,0.1);}
+.theme-royal-dark .footer-couple{color:#D4AF37;}
+.theme-royal-dark .music-controller{background:rgba(8,5,3,0.9);border-color:rgba(212,175,55,0.25);}
+.theme-royal-dark .music-btn{background:transparent;border:1px solid #D4AF37;}
+.theme-royal-dark .music-icon span{background:#D4AF37;}
+.theme-royal-dark .section-divider::before{content:'✦';font-size:12px;color:#D4AF37;}

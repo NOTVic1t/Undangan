@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMEGA Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/admin/css/admin.css" />
+</head>
+<body class="admin-body" data-page="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar" id="admin-sidebar" role="navigation" aria-label="Navigasi admin">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="logo-mark" aria-hidden="true">Ω</div>
+        <div class="logo-text">
+          <span class="logo-name">OMEGA</span>
+          <span class="logo-sub">Invitation</span>
+        </div>
+      </div>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Tutup menu" aria-expanded="true">✕</button>
+    </div>
+
+    <div class="sidebar-user" id="sidebar-user" aria-label="Info pengguna">
+      <div class="user-avatar" id="user-avatar" aria-hidden="true">A</div>
+      <div class="user-info">
+        <div class="user-name" id="user-name">Admin</div>
+        <div class="user-role" id="user-role">owner</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Menu utama">
+      <div class="nav-group">
+        <div class="nav-group-label">Utama</div>
+        <a class="nav-item active" href="#" data-page="dashboard" aria-label="Dashboard">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Dashboard
+        </a>
+        <a class="nav-item" href="#" data-page="invitations" aria-label="Undangan">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          Undangan
+        </a>
+        <a class="nav-item" href="#" data-page="guests" aria-label="Tamu">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Tamu
+        </a>
+        <a class="nav-item" href="#" data-page="rsvp" aria-label="RSVP">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          RSVP
+        </a>
+        <a class="nav-item" href="#" data-page="attendance" aria-label="Absensi">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+          Absensi QR
+        </a>
+        <a class="nav-item" href="#" data-page="guestbook" aria-label="Buku Tamu">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Buku Tamu
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Konten</div>
+        <a class="nav-item" href="#" data-page="themes" aria-label="Tema">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          Tema
+        </a>
+        <a class="nav-item" href="#" data-page="media" aria-label="Media">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          Media
+        </a>
+        <a class="nav-item" href="#" data-page="analytics" aria-label="Analitik">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          Analitik
+        </a>
+      </div>
+
+      <div class="nav-group" id="nav-group-business">
+        <div class="nav-group-label">Bisnis</div>
+        <a class="nav-item" href="#" data-page="payments" aria-label="Pembayaran">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          Pembayaran
+        </a>
+        <a class="nav-item" href="#" data-page="resellers" data-role="owner,admin" aria-label="Reseller">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          Reseller
+        </a>
+        <a class="nav-item" href="#" data-page="users" data-role="owner,admin" aria-label="Pengguna">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Pengguna
+        </a>
+      </div>
+
+      <div class="nav-group">
+        <div class="nav-group-label">Sistem</div>
+        <a class="nav-item" href="#" data-page="settings" aria-label="Pengaturan">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          Pengaturan
+        </a>
+        <button class="nav-item nav-item--btn" id="nav-logout" aria-label="Keluar">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Keluar
+        </button>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- SIDEBAR OVERLAY -->
+  <div class="sidebar-overlay hidden" id="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- MAIN CONTENT -->
+  <div class="admin-main" id="admin-main">
+
+    <!-- TOP BAR -->
+    <header class="admin-topbar" role="banner">
+      <div class="topbar-left">
+        <button class="topbar-menu-btn" id="topbar-menu-btn" aria-label="Buka menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-breadcrumb" id="topbar-breadcrumb" aria-label="Breadcrumb">
+          <span>Dashboard</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-notif-btn" id="topbar-notif-btn" aria-label="Notifikasi" aria-haspopup="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="notif-badge hidden" id="notif-badge" aria-label="notifikasi baru">0</span>
+        </button>
+        <div class="topbar-profile" id="topbar-profile" role="button" tabindex="0" aria-haspopup="true">
+          <div class="topbar-avatar" id="topbar-avatar" aria-hidden="true">A</div>
+          <span class="topbar-username" id="topbar-username">Admin</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <div class="admin-content" id="admin-content" role="main">
+
+      <!-- DASHBOARD PAGE -->
+      <div class="page active" id="page-dashboard">
+        <div class="page-header">
+          <h1 class="page-title">Dashboard</h1>
+          <button class="btn btn-primary" id="btn-new-invitation" aria-label="Buat undangan baru">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Undangan Baru
+          </button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid" role="region" aria-label="Statistik platform">
+          <div class="stat-card" id="stat-total-invitations">
+            <div class="stat-card-icon" style="background:rgba(99,102,241,0.12);color:#6366f1" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            </div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="dash-total-inv">-</div>
+              <div class="stat-card-label">Total Undangan</div>
+            </div>
+            <div class="stat-card-trend positive" id="dash-inv-trend"></div>
+          </div>
+
+          <div class="stat-card" id="stat-total-guests">
+            <div class="stat-card-icon" style="background:rgba(16,185,129,0.12);color:#10b981" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="dash-total-guests">-</div>
+              <div class="stat-card-label">Total Tamu</div>
+            </div>
+          </div>
+
+          <div class="stat-card" id="stat-total-rsvp">
+            <div class="stat-card-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="dash-total-rsvp">-</div>
+              <div class="stat-card-label">Total RSVP</div>
+            </div>
+          </div>
+
+          <div class="stat-card" id="stat-total-revenue">
+            <div class="stat-card-icon" style="background:rgba(239,68,68,0.12);color:#ef4444" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="dash-total-revenue">-</div>
+              <div class="stat-card-label">Pendapatan Bulan Ini</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Invitations Table -->
+        <div class="admin-card" role="region" aria-label="Undangan terbaru">
+          <div class="card-header">
+            <h2 class="card-title">Undangan Terbaru</h2>
+            <a href="#" class="card-action" data-page="invitations">Lihat Semua →</a>
+          </div>
+          <div class="table-wrapper" role="region" aria-label="Daftar undangan terbaru">
+            <table class="admin-table" id="recent-invitations-table">
+              <thead>
+                <tr>
+                  <th scope="col">Pasangan</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Tema</th>
+                  <th scope="col">Tamu</th>
+                  <th scope="col">RSVP</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="recent-invitations-body">
+                <tr><td colspan="6" class="table-loading" aria-live="polite">Memuat data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions" role="region" aria-label="Aksi cepat">
+          <h2 class="section-label">Aksi Cepat</h2>
+          <div class="quick-actions-grid">
+            <button class="quick-action-btn" data-page="invitations" data-action="new">
+              <div class="qa-icon" aria-hidden="true">📝</div>
+              <span>Buat Undangan</span>
+            </button>
+            <button class="quick-action-btn" data-page="guests">
+              <div class="qa-icon" aria-hidden="true">👥</div>
+              <span>Kelola Tamu</span>
+            </button>
+            <button class="quick-action-btn" data-page="attendance">
+              <div class="qa-icon" aria-hidden="true">📱</div>
+              <span>Scan QR</span>
+            </button>
+            <button class="quick-action-btn" data-page="analytics">
+              <div class="qa-icon" aria-hidden="true">📊</div>
+              <span>Analitik</span>
+            </button>
+            <button class="quick-action-btn" data-page="themes">
+              <div class="qa-icon" aria-hidden="true">🎨</div>
+              <span>Tema</span>
+            </button>
+            <button class="quick-action-btn" data-page="settings">
+              <div class="qa-icon" aria-hidden="true">⚙️</div>
+              <span>Pengaturan</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVITATIONS PAGE -->
+      <div class="page hidden" id="page-invitations">
+        <div class="page-header">
+          <h1 class="page-title">Undangan</h1>
+          <button class="btn btn-primary" id="btn-create-invitation">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Buat Undangan
+          </button>
+        </div>
+
+        <div class="filter-bar" role="search">
+          <input class="filter-input" type="search" id="inv-search" placeholder="Cari nama pengantin..." aria-label="Cari undangan" />
+          <select class="filter-select" id="inv-status-filter" aria-label="Filter status">
+            <option value="">Semua Status</option>
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+            <option value="unpublished">Unpublished</option>
+            <option value="expired">Expired</option>
+          </select>
+          <button class="btn btn-outline" id="inv-filter-btn">Filter</button>
+        </div>
+
+        <div class="admin-card">
+          <div class="table-wrapper">
+            <table class="admin-table" id="invitations-table">
+              <thead>
+                <tr>
+                  <th scope="col">Pasangan</th>
+                  <th scope="col">Slug</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Tema</th>
+                  <th scope="col">Views</th>
+                  <th scope="col">Tanggal Akad</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="invitations-body">
+                <tr><td colspan="7" class="table-loading" aria-live="polite">Memuat data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-pagination" id="inv-pagination" role="navigation" aria-label="Pagination"></div>
+        </div>
+      </div>
+
+      <!-- GUESTS PAGE -->
+      <div class="page hidden" id="page-guests">
+        <div class="page-header">
+          <h1 class="page-title">Manajemen Tamu</h1>
+          <div class="page-header-actions">
+            <select class="filter-select" id="guest-inv-select" aria-label="Pilih undangan">
+              <option value="">Pilih Undangan...</option>
+            </select>
+            <button class="btn btn-outline" id="btn-import-guests">Import CSV</button>
+            <button class="btn btn-primary" id="btn-add-guest">+ Tambah Tamu</button>
+          </div>
+        </div>
+
+        <div class="filter-bar" role="search">
+          <input class="filter-input" type="search" id="guest-search" placeholder="Cari nama tamu..." aria-label="Cari tamu" />
+          <select class="filter-select" id="guest-category-filter" aria-label="Filter kategori">
+            <option value="">Semua Kategori</option>
+            <option value="vip">VIP</option>
+            <option value="family">Keluarga</option>
+            <option value="friends">Teman</option>
+            <option value="office">Rekan Kerja</option>
+            <option value="custom">Custom</option>
+          </select>
+          <button class="btn btn-danger-outline hidden" id="btn-bulk-delete">Hapus Pilihan</button>
+        </div>
+
+        <div class="admin-card">
+          <div class="table-wrapper">
+            <table class="admin-table" id="guests-table">
+              <thead>
+                <tr>
+                  <th scope="col"><input type="checkbox" id="guest-select-all" aria-label="Pilih semua tamu" /></th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">HP / WA</th>
+                  <th scope="col">Maks Tamu</th>
+                  <th scope="col">WA Terkirim</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="guests-body">
+                <tr><td colspan="7" class="table-loading" aria-live="polite">Pilih undangan terlebih dahulu</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-pagination" id="guest-pagination" role="navigation" aria-label="Pagination tamu"></div>
+        </div>
+      </div>
+
+      <!-- RSVP PAGE -->
+      <div class="page hidden" id="page-rsvp">
+        <div class="page-header">
+          <h1 class="page-title">Manajemen RSVP</h1>
+          <select class="filter-select" id="rsvp-inv-select" aria-label="Pilih undangan">
+            <option value="">Pilih Undangan...</option>
+          </select>
+        </div>
+
+        <div class="stats-grid" id="rsvp-stats-grid" role="region" aria-label="Statistik RSVP">
+          <div class="stat-card mini">
+            <div class="stat-card-icon" style="background:rgba(16,185,129,0.12);color:#10b981" aria-hidden="true">✅</div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="rsvp-stat-attending">0</div>
+              <div class="stat-card-label">Hadir</div>
+            </div>
+          </div>
+          <div class="stat-card mini">
+            <div class="stat-card-icon" style="background:rgba(239,68,68,0.12);color:#ef4444" aria-hidden="true">❌</div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="rsvp-stat-not">0</div>
+              <div class="stat-card-label">Tidak Hadir</div>
+            </div>
+          </div>
+          <div class="stat-card mini">
+            <div class="stat-card-icon" style="background:rgba(245,158,11,0.12);color:#f59e0b" aria-hidden="true">⏳</div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="rsvp-stat-pending">0</div>
+              <div class="stat-card-label">Pending</div>
+            </div>
+          </div>
+          <div class="stat-card mini">
+            <div class="stat-card-icon" style="background:rgba(99,102,241,0.12);color:#6366f1" aria-hidden="true">👥</div>
+            <div class="stat-card-body">
+              <div class="stat-card-number" id="rsvp-stat-pax">0</div>
+              <div class="stat-card-label">Total Pax</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <div class="filter-bar">
+            <select class="filter-select" id="rsvp-status-filter" aria-label="Filter status RSVP">
+              <option value="">Semua Status</option>
+              <option value="attending">Hadir</option>
+              <option value="not_attending">Tidak Hadir</option>
+              <option value="pending">Pending</option>
+            </select>
+          </div>
+          <div class="table-wrapper">
+            <table class="admin-table" id="rsvp-table">
+              <thead>
+                <tr>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Pax</th>
+                  <th scope="col">HP</th>
+                  <th scope="col">Pesan</th>
+                  <th scope="col">Waktu</th>
+                </tr>
+              </thead>
+              <tbody id="rsvp-body">
+                <tr><td colspan="6" class="table-loading" aria-live="polite">Pilih undangan terlebih dahulu</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ATTENDANCE PAGE -->
+      <div class="page hidden" id="page-attendance">
+        <div class="page-header">
+          <h1 class="page-title">Absensi QR</h1>
+          <select class="filter-select" id="att-inv-select" aria-label="Pilih undangan untuk absensi">
+            <option value="">Pilih Undangan...</option>
+          </select>
+        </div>
+
+        <div class="attendance-layout">
+          <!-- QR Scanner -->
+          <div class="admin-card scanner-card" role="region" aria-label="Scanner QR">
+            <div class="card-header">
+              <h2 class="card-title">Scanner QR</h2>
+            </div>
+            <div class="scanner-wrapper">
+              <div class="scanner-frame" id="scanner-frame" role="img" aria-label="Area scanner QR">
+                <div class="scanner-line" aria-hidden="true"></div>
+                <div class="scanner-corners" aria-hidden="true"></div>
+              </div>
+              <div class="scanner-manual">
+                <label class="form-label" for="manual-code">Atau masukkan kode manual:</label>
+                <div class="scanner-manual-row">
+                  <input class="form-input" type="text" id="manual-code" placeholder="Kode tamu (8 karakter)" maxlength="8" aria-label="Kode tamu manual" />
+                  <button class="btn btn-primary" id="btn-manual-scan" aria-label="Scan manual">Scan</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scan Result -->
+            <div class="scan-result hidden" id="scan-result" role="alert" aria-live="assertive">
+              <div class="scan-result-icon" id="scan-result-icon" aria-hidden="true"></div>
+              <div class="scan-result-name" id="scan-result-name"></div>
+              <div class="scan-result-status" id="scan-result-status"></div>
+              <div class="scan-result-pax" id="scan-result-pax"></div>
+            </div>
+          </div>
+
+          <!-- Attendance Stats & Logs -->
+          <div class="attendance-right">
+            <div class="stats-grid" role="region" aria-label="Statistik absensi">
+              <div class="stat-card mini">
+                <div class="stat-card-body">
+                  <div class="stat-card-number" id="att-stat-arrived">0</div>
+                  <div class="stat-card-label">Sudah Hadir</div>
+                </div>
+              </div>
+              <div class="stat-card mini">
+                <div class="stat-card-body">
+                  <div class="stat-card-number" id="att-stat-pax">0</div>
+                  <div class="stat-card-label">Total Pax</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="admin-card">
+              <div class="card-header">
+                <h2 class="card-title">Log Kedatangan</h2>
+              </div>
+              <div class="attendance-log" id="attendance-log" role="feed" aria-label="Log kedatangan tamu" aria-live="polite"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GUESTBOOK PAGE -->
+      <div class="page hidden" id="page-guestbook">
+        <div class="page-header">
+          <h1 class="page-title">Buku Tamu</h1>
+          <select class="filter-select" id="gb-inv-select" aria-label="Pilih undangan untuk buku tamu">
+            <option value="">Pilih Undangan...</option>
+          </select>
+        </div>
+        <div class="admin-card">
+          <div class="table-wrapper">
+            <table class="admin-table" id="gb-admin-table">
+              <thead>
+                <tr>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Pesan</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Waktu</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="gb-admin-body">
+                <tr><td colspan="5" class="table-loading" aria-live="polite">Pilih undangan terlebih dahulu</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- THEMES PAGE -->
+      <div class="page hidden" id="page-themes">
+        <div class="page-header">
+          <h1 class="page-title">Tema</h1>
+        </div>
+        <div class="themes-grid" id="themes-grid" role="list" aria-label="Daftar tema"></div>
+      </div>
+
+      <!-- ANALYTICS PAGE -->
+      <div class="page hidden" id="page-analytics">
+        <div class="page-header">
+          <h1 class="page-title">Analitik</h1>
+          <div class="page-header-actions">
+            <select class="filter-select" id="analytics-inv-select" aria-label="Pilih undangan untuk analitik">
+              <option value="">Pilih Undangan...</option>
+            </select>
+            <select class="filter-select" id="analytics-period" aria-label="Periode analitik">
+              <option value="7">7 Hari</option>
+              <option value="30" selected>30 Hari</option>
+              <option value="90">90 Hari</option>
+            </select>
+          </div>
+        </div>
+        <div class="analytics-grid" id="analytics-grid" role="region" aria-label="Data analitik">
+          <div class="admin-card analytics-overview" role="region" aria-label="Ringkasan analitik">
+            <h2 class="card-title">Ringkasan</h2>
+            <div class="analytics-stats" id="analytics-stats"></div>
+          </div>
+          <div class="admin-card" role="region" aria-label="Statistik perangkat">
+            <h2 class="card-title">Perangkat</h2>
+            <div class="analytics-chart" id="device-chart"></div>
+          </div>
+          <div class="admin-card" role="region" aria-label="Statistik browser">
+            <h2 class="card-title">Browser</h2>
+            <div class="analytics-chart" id="browser-chart"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAYMENTS PAGE -->
+      <div class="page hidden" id="page-payments">
+        <div class="page-header">
+          <h1 class="page-title">Pembayaran</h1>
+        </div>
+        <div class="admin-card">
+          <div class="table-wrapper">
+            <table class="admin-table" id="payments-table">
+              <thead>
+                <tr>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Paket</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Metode</th>
+                  <th scope="col">Tanggal</th>
+                </tr>
+              </thead>
+              <tbody id="payments-body">
+                <tr><td colspan="6" class="table-loading">Memuat data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS PAGE -->
+      <div class="page hidden" id="page-settings">
+        <div class="page-header">
+          <h1 class="page-title">Pengaturan</h1>
+        </div>
+        <div class="settings-layout">
+          <div class="admin-card" role="region" aria-label="Pengaturan platform">
+            <h2 class="card-title">Platform</h2>
+            <form class="settings-form" id="settings-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="setting-platform-name">Nama Platform</label>
+                <input class="form-input" type="text" id="setting-platform-name" placeholder="OMEGA Invitation" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setting-branding">Teks Branding Footer</label>
+                <input class="form-input" type="text" id="setting-branding" placeholder="Created By Victor Rizki Valentiano" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setting-branding-url">URL Branding</label>
+                <input class="form-input" type="url" id="setting-branding-url" placeholder="https://omega-invite.com" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setting-support-wa">WhatsApp Support</label>
+                <input class="form-input" type="tel" id="setting-support-wa" placeholder="+6281234567890" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="setting-commission">Komisi Reseller (%)</label>
+                <input class="form-input" type="number" id="setting-commission" min="0" max="100" placeholder="20" />
+              </div>
+              <button type="submit" class="btn btn-primary">Simpan Pengaturan</button>
+            </form>
+          </div>
+
+          <div class="admin-card" role="region" aria-label="Pengaturan profil">
+            <h2 class="card-title">Profil Saya</h2>
+            <form class="settings-form" id="profile-form" novalidate>
+              <div class="form-group">
+                <label class="form-label" for="profile-name">Nama Lengkap</label>
+                <input class="form-input" type="text" id="profile-name" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profile-phone">Nomor HP</label>
+                <input class="form-input" type="tel" id="profile-phone" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profile-company">Nama Perusahaan</label>
+                <input class="form-input" type="text" id="profile-company" autocomplete="organization" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="profile-password">Password Baru (kosongkan jika tidak ganti)</label>
+                <input class="form-input" type="password" id="profile-password" autocomplete="new-password" />
+              </div>
+              <button type="submit" class="btn btn-primary">Simpan Profil</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: Create/Edit Invitation -->
+  <div class="modal hidden" id="modal-invitation" role="dialog" aria-modal="true" aria-labelledby="modal-inv-title">
+    <div class="modal-backdrop" id="modal-inv-backdrop"></div>
+    <div class="modal-box modal-box--wide">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-inv-title">Buat Undangan Baru</h2>
+        <button class="modal-close" id="modal-inv-close" aria-label="Tutup modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="invitation-form" novalidate>
+          <input type="hidden" id="inv-form-id" />
+
+          <div class="form-section">
+            <h3 class="form-section-title">Pasangan</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-bride-name">Nama Panggilan Pengantin Wanita *</label>
+                <input class="form-input" type="text" id="inv-bride-name" required placeholder="Mis: Sari" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-groom-name">Nama Panggilan Pengantin Pria *</label>
+                <input class="form-input" type="text" id="inv-groom-name" required placeholder="Mis: Budi" maxlength="100" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-bride-full">Nama Lengkap Pengantin Wanita</label>
+                <input class="form-input" type="text" id="inv-bride-full" placeholder="Nama lengkap sesuai KTP" maxlength="200" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-groom-full">Nama Lengkap Pengantin Pria</label>
+                <input class="form-input" type="text" id="inv-groom-full" placeholder="Nama lengkap sesuai KTP" maxlength="200" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-bride-father">Ayah Pengantin Wanita</label>
+                <input class="form-input" type="text" id="inv-bride-father" placeholder="Nama ayah" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-bride-mother">Ibu Pengantin Wanita</label>
+                <input class="form-input" type="text" id="inv-bride-mother" placeholder="Nama ibu" maxlength="100" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-groom-father">Ayah Pengantin Pria</label>
+                <input class="form-input" type="text" id="inv-groom-father" placeholder="Nama ayah" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-groom-mother">Ibu Pengantin Pria</label>
+                <input class="form-input" type="text" id="inv-groom-mother" placeholder="Nama ibu" maxlength="100" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="form-section-title">Akad Nikah</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-akad-date">Tanggal & Waktu Akad</label>
+                <input class="form-input" type="datetime-local" id="inv-akad-date" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-akad-location">Nama Tempat Akad</label>
+                <input class="form-input" type="text" id="inv-akad-location" placeholder="Mis: Masjid Al-Hikmah" maxlength="300" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inv-akad-address">Alamat Lengkap Akad</label>
+              <textarea class="form-input form-textarea" id="inv-akad-address" rows="2" placeholder="Jl. Contoh No. 123, Kelurahan, Kecamatan, Kota" maxlength="500"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inv-akad-maps">URL Google Maps Akad</label>
+              <input class="form-input" type="url" id="inv-akad-maps" placeholder="https://maps.google.com/..." />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="form-section-title">Resepsi</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-reception-date">Tanggal & Waktu Resepsi *</label>
+                <input class="form-input" type="datetime-local" id="inv-reception-date" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-reception-location">Nama Tempat Resepsi</label>
+                <input class="form-input" type="text" id="inv-reception-location" placeholder="Mis: Grand Ballroom Hotel XYZ" maxlength="300" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inv-reception-address">Alamat Lengkap Resepsi</label>
+              <textarea class="form-input form-textarea" id="inv-reception-address" rows="2" placeholder="Jl. Contoh No. 123, Kelurahan, Kecamatan, Kota" maxlength="500"></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-reception-maps">URL Google Maps Resepsi</label>
+                <input class="form-input" type="url" id="inv-reception-maps" placeholder="https://maps.google.com/..." />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-maps-embed">Kode Embed Google Maps</label>
+                <textarea class="form-input form-textarea" id="inv-maps-embed" rows="2" placeholder='&lt;iframe src="..." ...&gt;&lt;/iframe&gt;'></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="form-section-title">Konten & Media</h3>
+            <div class="form-group">
+              <label class="form-label" for="inv-opening-text">Teks Pembuka</label>
+              <textarea class="form-input form-textarea" id="inv-opening-text" rows="3" placeholder="Dengan memohon rahmat dan ridho Allah SWT..." maxlength="500"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inv-music-url">URL Musik Latar (MP3/OGG)</label>
+              <input class="form-input" type="url" id="inv-music-url" placeholder="https://..." />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-music-title">Judul Lagu</label>
+                <input class="form-input" type="text" id="inv-music-title" placeholder="Mis: A Thousand Years" maxlength="100" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-music-artist">Nama Artis</label>
+                <input class="form-input" type="text" id="inv-music-artist" placeholder="Mis: Christina Perri" maxlength="100" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inv-youtube">YouTube Video ID (opsional)</label>
+              <input class="form-input" type="text" id="inv-youtube" placeholder="Mis: dQw4w9WgXcQ" maxlength="20" />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 class="form-section-title">Tema & Pengaturan</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-theme">Tema</label>
+                <select class="form-input" id="inv-theme" aria-label="Pilih tema undangan">
+                  <option value="">Memuat tema...</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-custom-domain">Custom Domain (opsional)</label>
+                <input class="form-input" type="text" id="inv-custom-domain" placeholder="undangan.domain.com" maxlength="200" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="inv-rsvp-deadline">Batas RSVP</label>
+                <input class="form-input" type="datetime-local" id="inv-rsvp-deadline" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="inv-guest-limit">Maks Tamu per RSVP</label>
+                <input class="form-input" type="number" id="inv-guest-limit" min="1" max="20" value="5" />
+              </div>
+            </div>
+            <div class="form-toggles">
+              <label class="toggle-label">
+                <input type="checkbox" id="inv-enable-rsvp" checked />
+                <span class="toggle-slider" aria-hidden="true"></span>
+                <span>Aktifkan RSVP</span>
+              </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="inv-enable-guestbook" checked />
+                <span class="toggle-slider" aria-hidden="true"></span>
+                <span>Aktifkan Buku Tamu</span>
+              </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="inv-enable-gift" checked />
+                <span class="toggle-slider" aria-hidden="true"></span>
+                <span>Aktifkan Hadiah</span>
+              </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="inv-enable-music" checked />
+                <span class="toggle-slider" aria-hidden="true"></span>
+                <span>Aktifkan Musik</span>
+              </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="inv-enable-countdown" checked />
+                <span class="toggle-slider" aria-hidden="true"></span>
+                <span>Aktifkan Countdown</span>
+              </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="inv-enable-qr" />
+                <span class="toggle-slider" aria-hidden="true"></span>
+                <span>Aktifkan QR Absensi</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline" id="btn-inv-save-draft">Simpan Draft</button>
+            <button type="submit" class="btn btn-primary" id="btn-inv-save">Simpan & Publish</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Add Guest -->
+  <div class="modal hidden" id="modal-guest" role="dialog" aria-modal="true" aria-labelledby="modal-guest-title">
+    <div class="modal-backdrop" id="modal-guest-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-guest-title">Tambah Tamu</h2>
+        <button class="modal-close" id="modal-guest-close" aria-label="Tutup modal tamu">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="guest-form" novalidate>
+          <input type="hidden" id="guest-form-inv-id" />
+          <input type="hidden" id="guest-form-id" />
+          <div class="form-group">
+            <label class="form-label" for="guest-name">Nama Tamu *</label>
+            <input class="form-input" type="text" id="guest-name" required placeholder="Nama lengkap tamu" maxlength="200" autocomplete="off" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="guest-phone">Nomor WhatsApp</label>
+              <input class="form-input" type="tel" id="guest-phone" placeholder="08xxxxxxxxxx" maxlength="20" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guest-email">Email</label>
+              <input class="form-input" type="email" id="guest-email" placeholder="email@domain.com" maxlength="200" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="guest-category">Kategori</label>
+              <select class="form-input" id="guest-category" aria-label="Kategori tamu">
+                <option value="friends">Teman</option>
+                <option value="family">Keluarga</option>
+                <option value="vip">VIP</option>
+                <option value="office">Rekan Kerja</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="guest-pax">Maks Pax</label>
+              <input class="form-input" type="number" id="guest-pax" min="1" max="20" value="1" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="guest-notes">Catatan</label>
+            <textarea class="form-input form-textarea" id="guest-notes" rows="2" placeholder="Catatan khusus untuk tamu ini" maxlength="500"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Simpan Tamu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Import CSV -->
+  <div class="modal hidden" id="modal-import" role="dialog" aria-modal="true" aria-labelledby="modal-import-title">
+    <div class="modal-backdrop" id="modal-import-backdrop"></div>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-import-title">Import Tamu dari CSV</h2>
+        <button class="modal-close" id="modal-import-close" aria-label="Tutup modal import">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="import-info">
+          <p>Format CSV yang didukung:</p>
+          <code class="import-format">name,phone,email,category,pax,notes</code>
+          <p>Contoh:</p>
+          <code class="import-format">Budi Santoso,081234567890,budi@email.com,friends,2,VIP table</code>
+          <a class="btn btn-outline btn-sm" href="#" id="btn-download-template" download="template-tamu.csv">Download Template CSV</a>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="csv-file">Pilih File CSV</label>
+          <input class="form-input" type="file" id="csv-file" accept=".csv,.txt" aria-label="Pilih file CSV tamu" />
+        </div>
+        <div class="import-preview hidden" id="import-preview" role="region" aria-label="Preview data import">
+          <h3 class="import-preview-title">Preview (<span id="import-count">0</span> tamu)</h3>
+          <div class="table-wrapper">
+            <table class="admin-table" id="preview-table">
+              <thead><tr><th>Nama</th><th>HP</th><th>Kategori</th><th>Pax</th></tr></thead>
+              <tbody id="preview-body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary hidden" id="btn-confirm-import">Import <span id="import-btn-count">0</span> Tamu</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="/config/supabase.js"></script>
+  <script src="/core/omega.js"></script>
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>

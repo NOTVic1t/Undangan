@@ -1,0 +1,42 @@
+# GitHub Pages Configuration for OMEGA Invitation Platform
+# This file configures Jekyll for GitHub Pages deployment
+
+# Disable Jekyll processing for files starting with underscore
+# and allow passthrough of all files
+include:
+  - _redirects
+
+# Exclude from processing
+exclude:
+  - README.md
+  - DEPLOYMENT.md
+  - .env
+  - .env.example
+  - node_modules/
+  - "*.sh"
+
+# Allow HTML in markdown
+markdown: kramdown
+
+# Sass/SCSS settings
+sass:
+  style: compressed
+
+# Plugins
+plugins: []
+
+# No theme - we use custom HTML/CSS
+theme: null
+remote_theme: null
+
+# Collections
+collections: {}
+
+# Defaults
+defaults: []
+
+# Site settings
+title: "OMEGA Invitation"
+description: "Platform Undangan Digital Pernikahan Premium"
+url: ""
+baseurl: ""

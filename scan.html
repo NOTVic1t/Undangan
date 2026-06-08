@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Scanner — OMEGA Invitation</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',-apple-system,sans-serif;background:#0A0A0F;color:#E8E8F0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;-webkit-font-smoothing:antialiased;}
+    .scanner-page{width:100%;max-width:480px;}
+    .scanner-header{text-align:center;margin-bottom:32px;}
+    .scanner-logo{font-size:28px;font-weight:700;color:#C9A84C;letter-spacing:2px;margin-bottom:4px;}
+    .scanner-subtitle{font-size:13px;color:#9898A8;}
+    .scanner-inv-select{width:100%;padding:10px 14px;background:#17171D;border:1px solid rgba(255,255,255,0.07);border-radius:10px;color:#E8E8F0;font-size:14px;margin-bottom:20px;cursor:pointer;}
+    .scanner-inv-select:focus{outline:none;border-color:#6366F1;}
+    .scanner-inv-select option{background:#17171D;}
+    .scan-box{background:#17171D;border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:24px;margin-bottom:16px;}
+    .scan-box-title{font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#9898A8;margin-bottom:16px;}
+    .manual-row{display:flex;gap:10px;}
+    .manual-input{flex:1;padding:12px 14px;background:#1E1E26;border:1px solid rgba(255,255,255,0.07);border-radius:10px;color:#E8E8F0;font-size:14px;font-family:monospace;letter-spacing:2px;text-transform:uppercase;}
+    .manual-input:focus{outline:none;border-color:#6366F1;box-shadow:0 0 0 3px rgba(99,102,241,0.15);}
+    .scan-btn{padding:12px 20px;background:#6366F1;color:#fff;font-size:14px;font-weight:600;border-radius:10px;cursor:pointer;border:none;transition:all .2s;white-space:nowrap;}
+    .scan-btn:hover{background:#4F52DB;transform:translateY(-1px);}
+    .scan-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+    .result-box{border-radius:12px;padding:20px;text-align:center;margin-bottom:16px;animation:fadeIn .3s ease;display:none;}
+    .result-box.success{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);}
+    .result-box.error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);}
+    .result-box.warning{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .result-icon{font-size:44px;margin-bottom:10px;}
+    .result-name{font-size:20px;font-weight:700;margin-bottom:4px;}
+    .result-status{font-size:14px;opacity:.7;margin-bottom:4px;}
+    .result-pax{font-size:14px;font-weight:600;color:#6366F1;}
+    .stats-row{display:flex;gap:10px;margin-bottom:16px;}
+    .stat-box{flex:1;background:#17171D;border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px;text-align:center;}
+    .stat-num{font-size:28px;font-weight:700;color:#6366F1;font-family:'Syne',sans-serif;}
+    .stat-lbl{font-size:11px;color:#9898A8;margin-top:2px;letter-spacing:.5px;}
+    .log-box{background:#17171D;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:16px;}
+    .log-title{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#9898A8;margin-bottom:12px;}
+    .log-list{max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;}
+    .log-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#1E1E26;border-radius:8px;animation:slideIn .3s ease;}
+    @keyframes slideIn{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+    .log-icon{font-size:16px;flex-shrink:0;}
+    .log-name{font-size:13px;font-weight:600;flex:1;}
+    .log-pax{font-size:12px;color:#6366F1;font-weight:600;}
+    .log-time{font-size:11px;color:#9898A8;}
+    .empty-log{text-align:center;padding:24px;color:#9898A8;font-size:13px;font-style:italic;}
+    .auth-box{background:#17171D;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:32px;text-align:center;}
+    .auth-title{font-size:18px;font-weight:700;margin-bottom:8px;}
+    .auth-sub{font-size:13px;color:#9898A8;margin-bottom:24px;}
+    .auth-input{width:100%;padding:12px 14px;background:#1E1E26;border:1px solid rgba(255,255,255,.07);border-radius:10px;color:#E8E8F0;font-size:14px;margin-bottom:10px;}
+    .auth-input:focus{outline:none;border-color:#6366F1;}
+    .auth-btn{width:100%;padding:12px;background:#6366F1;color:#fff;font-size:14px;font-weight:700;border-radius:10px;cursor:pointer;border:none;}
+    .auth-btn:hover{background:#4F52DB;}
+    .hidden{display:none!important;}
+    ::-webkit-scrollbar{width:4px;}
+    ::-webkit-scrollbar-track{background:transparent;}
+    ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px;}
+  </style>
+</head>
+<body>
+
+  <div class="scanner-page">
+    <div class="scanner-header">
+      <div class="scanner-logo">Ω OMEGA</div>
+      <div class="scanner-subtitle">QR Attendance Scanner</div>
+    </div>
+
+    <!-- Auth required -->
+    <div id="auth-section" class="auth-box hidden">
+      <div class="auth-title">Login Diperlukan</div>
+      <div class="auth-sub">Masuk untuk menggunakan scanner QR absensi</div>
+      <input class="auth-input" type="email" id="auth-email" placeholder="Email admin" autocomplete="email" />
+      <input class="auth-input" type="password" id="auth-password" placeholder="Password" autocomplete="current-password" />
+      <button class="auth-btn" id="auth-btn">Masuk</button>
+      <div id="auth-error" style="color:#EF4444;font-size:12px;margin-top:8px;display:none"></div>
+    </div>
+
+    <!-- Scanner UI -->
+    <div id="scanner-section" class="hidden">
+      <select class="scanner-inv-select" id="inv-select" aria-label="Pilih undangan">
+        <option value="">Pilih Undangan...</option>
+      </select>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-box">
+          <div class="stat-num" id="stat-arrived">0</div>
+          <div class="stat-lbl">Sudah Hadir</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" id="stat-pax">0</div>
+          <div class="stat-lbl">Total Pax</div>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="result-box" id="result-box" role="alert" aria-live="assertive">
+        <div class="result-icon" id="result-icon"></div>
+        <div class="result-name" id="result-name"></div>
+        <div class="result-status" id="result-status"></div>
+        <div class="result-pax" id="result-pax"></div>
+      </div>
+
+      <!-- Manual input -->
+      <div class="scan-box">
+        <div class="scan-box-title">Scan Kode Tamu</div>
+        <div class="manual-row">
+          <input
+            class="manual-input" type="text"
+            id="code-input"
+            placeholder="XXXXXXXX"
+            maxlength="8"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            aria-label="Kode tamu 8 karakter"
+          />
+          <button class="scan-btn" id="scan-btn">Scan</button>
+        </div>
+      </div>
+
+      <!-- Log -->
+      <div class="log-box">
+        <div class="log-title">Log Kedatangan</div>
+        <div class="log-list" id="log-list" role="feed" aria-label="Log tamu yang hadir" aria-live="polite">
+          <div class="empty-log">Belum ada tamu yang check-in</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="/config/supabase.js"></script>
+  <script src="/core/omega.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      let currentInvId = null;
+
+      async function init() {
+        const session = await OMEGA.auth.getSession();
+        if (!session) {
+          document.getElementById('auth-section').classList.remove('hidden');
+          initAuth();
+        } else {
+          showScanner();
+        }
+      }
+
+      function initAuth() {
+        const btn = document.getElementById('auth-btn');
+        const errEl = document.getElementById('auth-error');
+
+        btn.addEventListener('click', async () => {
+          const email = document.getElementById('auth-email').value.trim();
+          const pass = document.getElementById('auth-password').value;
+          if (!email || !pass) { showErr('Email dan password wajib diisi'); return; }
+
+          btn.disabled = true;
+          btn.textContent = 'Masuk...';
+          try {
+            await OMEGA.auth.signIn(email, pass);
+            document.getElementById('auth-section').classList.add('hidden');
+            showScanner();
+          } catch (e) {
+            showErr('Email atau password salah');
+            btn.disabled = false;
+            btn.textContent = 'Masuk';
+          }
+        });
+
+        document.getElementById('auth-password').addEventListener('keydown', e => {
+          if (e.key === 'Enter') btn.click();
+        });
+
+        function showErr(msg) {
+          errEl.textContent = msg;
+          errEl.style.display = '';
+        }
+      }
+
+      async function showScanner() {
+        document.getElementById('scanner-section').classList.remove('hidden');
+        await loadInvitations();
+        initScanInput();
+
+        // Focus code input
+        setTimeout(() => document.getElementById('code-input')?.focus(), 300);
+      }
+
+      async function loadInvitations() {
+        try {
+          const result = await OMEGA.invitation.list({}, 1, 100);
+          const select = document.getElementById('inv-select');
+          select.innerHTML = '<option value="">Pilih Undangan...</option>' +
+            (result.data || []).map(inv =>
+              `<option value="${inv.id}">${inv.bride_name} & ${inv.groom_name}</option>`
+            ).join('');
+
+          select.addEventListener('change', (e) => {
+            currentInvId = e.target.value || null;
+            if (currentInvId) {
+              refreshStats();
+              subscribeRealtime();
+            }
+          });
+
+          // Auto-select if only one
+          if (result.data?.length === 1) {
+            select.value = result.data[0].id;
+            currentInvId = result.data[0].id;
+            refreshStats();
+            subscribeRealtime();
+          }
+        } catch (e) {
+          console.warn('Failed to load invitations:', e);
+        }
+      }
+
+      function initScanInput() {
+        const input = document.getElementById('code-input');
+        const btn = document.getElementById('scan-btn');
+
+        btn.addEventListener('click', () => doScan(input.value.trim().toUpperCase()));
+
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter') doScan(input.value.trim().toUpperCase());
+        });
+
+        // Auto-scan when 8 chars entered
+        input.addEventListener('input', () => {
+          const val = input.value.replace(/[^A-Z0-9]/gi, '').toUpperCase();
+          input.value = val;
+          if (val.length === 8) {
+            setTimeout(() => doScan(val), 100);
+          }
+        });
+      }
+
+      async function doScan(code) {
+        const input = document.getElementById('code-input');
+        const btn = document.getElementById('scan-btn');
+
+        if (!code) { showResult('error', '❓', 'Masukkan Kode', 'Kode tamu wajib diisi', ''); return; }
+        if (!currentInvId) { showResult('error', '⚠️', 'Pilih Undangan', 'Pilih undangan terlebih dahulu', ''); return; }
+
+        btn.disabled = true;
+        btn.textContent = '...';
+
+        try {
+          const result = await OMEGA.attendance.scanQR(code);
+
+          if (result.status === 'already_scanned') {
+            showResult('warning', '⚠️', result.guest.name, 'Sudah check-in sebelumnya', `Pax: ${result.guest.max_pax || 1}`);
+          } else {
+            showResult('success', '✅', result.guest.name, 'Check-in Berhasil!', `${result.guest.max_pax || 1} pax`);
+            addLog(result.guest);
+            await refreshStats();
+          }
+
+          input.value = '';
+          setTimeout(() => { input.focus(); }, 500);
+
+        } catch (err) {
+          showResult('error', '❌', 'Tidak Ditemukan', err.message || 'Kode tidak valid', '');
+          setTimeout(() => { input.select(); }, 300);
+        } finally {
+          btn.disabled = false;
+          btn.textContent = 'Scan';
+        }
+      }
+
+      function showResult(type, icon, name, status, pax) {
+        const box = document.getElementById('result-box');
+        box.className = `result-box ${type}`;
+        box.style.display = '';
+        document.getElementById('result-icon').textContent = icon;
+        document.getElementById('result-name').textContent = name;
+        document.getElementById('result-status').textContent = status;
+        document.getElementById('result-pax').textContent = pax;
+
+        clearTimeout(box._hideTimer);
+        box._hideTimer = setTimeout(() => { box.style.display = 'none'; }, 4000);
+      }
+
+      function addLog(guest) {
+        const list = document.getElementById('log-list');
+        const empty = list.querySelector('.empty-log');
+        if (empty) empty.remove();
+
+        const item = document.createElement('div');
+        item.className = 'log-item';
+        item.innerHTML = `
+          <div class="log-icon">✅</div>
+          <div class="log-name">${escHtml(guest.name)}</div>
+          <div class="log-pax">${guest.max_pax || 1} pax</div>
+          <div class="log-time">${new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit',second:'2-digit'})}</div>
+        `;
+        list.insertBefore(item, list.firstChild);
+
+        // Keep max 50 items
+        while (list.children.length > 50) list.removeChild(list.lastChild);
+      }
+
+      async function refreshStats() {
+        if (!currentInvId) return;
+        try {
+          const dashboard = await OMEGA.attendance.getDashboard(currentInvId);
+          document.getElementById('stat-arrived').textContent = dashboard.arrived || 0;
+          document.getElementById('stat-pax').textContent = dashboard.total_pax || 0;
+        } catch (e) { /* non-critical */ }
+      }
+
+      let realtimeCh = null;
+      function subscribeRealtime() {
+        if (realtimeCh) { try { realtimeCh.unsubscribe(); } catch(e){} }
+        if (!currentInvId) return;
+        realtimeCh = OMEGA.attendance.subscribeRealtime(currentInvId, () => refreshStats());
+      }
+
+      function escHtml(str) {
+        const d = document.createElement('div');
+        d.textContent = str || '';
+        return d.innerHTML;
+      }
+
+      // Handle ?code= in URL (deep link from QR)
+      const urlCode = new URLSearchParams(window.location.search).get('code');
+
+      // Boot
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          init().then(() => {
+            if (urlCode) {
+              setTimeout(() => {
+                const input = document.getElementById('code-input');
+                if (input) { input.value = urlCode.toUpperCase(); doScan(urlCode.toUpperCase()); }
+              }, 800);
+            }
+          });
+        });
+      } else {
+        init().then(() => {
+          if (urlCode) {
+            setTimeout(() => {
+              const input = document.getElementById('code-input');
+              if (input) { input.value = urlCode.toUpperCase(); doScan(urlCode.toUpperCase()); }
+            }, 800);
+          }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

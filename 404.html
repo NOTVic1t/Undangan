@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMEGA Invitation</title>
+  <script>
+    // GitHub Pages SPA redirect hack
+    // Stores the full path in sessionStorage and redirects to index.html
+    // index.html then reads it and routes accordingly
+    var path = window.location.pathname;
+    var search = window.location.search;
+    var hash = window.location.hash;
+
+    // If path is /i/slug, handle it
+    if (path.indexOf('/i/') === 0) {
+      sessionStorage.setItem('omega_redirect', path + search + hash);
+      window.location.replace('/');
+    }
+    // If path is /scan, redirect to scan page
+    else if (path.indexOf('/scan') === 0) {
+      sessionStorage.setItem('omega_redirect', path + search + hash);
+      window.location.replace('/scan.html' + search + hash);
+    }
+    // Admin paths
+    else if (path.indexOf('/admin') === 0) {
+      window.location.replace('/admin/' + search + hash);
+    }
+    else {
+      window.location.replace('/' + search + hash);
+    }
+  </script>
+</head>
+<body></body>
+</html>

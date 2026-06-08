@@ -1,0 +1,31 @@
+{
+  "slug": "luxury-gold",
+  "name": "Luxury Gold",
+  "description": "Elegan dan mewah dengan aksen emas berkilau",
+  "category": "luxury",
+  "tags": ["gold", "elegant", "luxury", "modern", "dark"],
+  "primaryFont": "Cormorant Garamond",
+  "secondaryFont": "Lato",
+  "particles": "gold_dust",
+  "openingAnimation": "fade_reveal",
+  "sectionAnimation": "slide_up",
+  "cssVariables": {
+    "--theme-primary": "#C9A84C",
+    "--theme-secondary": "#F5E6C8",
+    "--theme-bg": "#1A1209",
+    "--theme-text": "#F5E6C8",
+    "--theme-accent": "#E8C97A",
+    "--theme-dark": "#0D0904",
+    "--theme-surface": "rgba(201,168,76,0.06)",
+    "--theme-border": "rgba(201,168,76,0.2)"
+  },
+  "features": ["particles", "gold_dust", "shimmer", "ornaments"],
+  "isPremium": false,
+  "isFeatured": true,
+  "sortOrder": 1,
+  "preview": {
+    "bg": "#1A1209",
+    "primary": "#C9A84C",
+    "text": "#F5E6C8"
+  }
+}

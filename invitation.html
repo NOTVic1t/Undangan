@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#1A1209" />
+  <title id="page-title">Undangan Pernikahan</title>
+  <meta id="meta-description" name="description" content="Anda diundang ke pernikahan kami" />
+  <meta id="og-title" property="og:title" content="Undangan Pernikahan" />
+  <meta id="og-description" property="og:description" content="Anda diundang ke pernikahan kami" />
+  <meta id="og-image" property="og:image" content="" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/core/invitation.css" />
+</head>
+<body class="invitation-body" data-scroll-locked="true">
+
+  <!-- LOADING SCREEN -->
+  <div id="loading-screen" class="loading-screen" aria-hidden="true">
+    <div class="loading-inner">
+      <div class="loading-ornament"></div>
+      <div class="loading-text">Memuat Undangan...</div>
+      <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- OPENING SCREEN -->
+  <section id="opening-screen" class="opening-screen hidden" aria-label="Layar pembuka undangan">
+    <div class="opening-bg" id="opening-bg"></div>
+    <div class="opening-particles" id="opening-particles" aria-hidden="true"></div>
+    <div class="opening-content">
+      <div class="opening-label" id="opening-label">Undangan Pernikahan</div>
+      <div class="opening-to" id="opening-to">Kepada Yth.</div>
+      <div class="opening-guest-name" id="opening-guest-name">Bapak / Ibu / Saudara/i</div>
+      <div class="opening-couple" id="opening-couple-name">
+        <span class="opening-bride" id="ob-bride">Bride</span>
+        <span class="opening-amp">&</span>
+        <span class="opening-groom" id="ob-groom">Groom</span>
+      </div>
+      <button class="opening-cta" id="opening-cta" onclick="OMEGA.invitation.openInvitation()" aria-label="Buka undangan">
+        <span>Buka Undangan</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.87L12 17.77l-6.18 3.24L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      </button>
+    </div>
+    <div class="opening-scroll-hint" aria-hidden="true">
+      <div class="scroll-hint-line"></div>
+    </div>
+  </section>
+
+  <!-- MAIN INVITATION CONTENT -->
+  <main id="invitation-main" class="invitation-main hidden" aria-label="Isi undangan pernikahan">
+
+    <!-- MUSIC CONTROLLER -->
+    <div class="music-controller" id="music-controller" role="region" aria-label="Kontrol musik">
+      <button class="music-btn" id="music-btn" aria-label="Putar atau jeda musik">
+        <div class="music-icon playing" id="music-icon" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </button>
+      <div class="music-info" id="music-info">
+        <span class="music-title" id="music-title-display">♪ Wedding Song</span>
+      </div>
+    </div>
+
+    <!-- HERO / COUPLE SECTION -->
+    <section class="section section-hero" id="section-hero" aria-label="Pasangan pengantin">
+      <div class="hero-bg" id="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="section-particles" id="hero-particles" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-bismillah" id="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <p class="hero-intro animate-up" id="hero-intro">Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda untuk menyaksikan pernikahan putra-putri kami</p>
+        <div class="couple-wrapper animate-up">
+          <div class="couple-card bride-card" id="bride-card">
+            <div class="couple-photo-frame">
+              <img class="couple-photo" id="bride-photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Crect width='140' height='140' fill='%23333'/%3E%3Ccircle cx='70' cy='55' r='28' fill='%23555'/%3E%3Cellipse cx='70' cy='110' rx='45' ry='35' fill='%23555'/%3E%3C/svg%3E" alt="Foto pengantin wanita" loading="lazy" />
+            </div>
+            <div class="couple-name" id="hero-bride-name">Pengantin Wanita</div>
+            <div class="couple-full-name" id="hero-bride-full"></div>
+            <div class="couple-parents" id="hero-bride-parents"></div>
+            <a class="couple-ig" id="bride-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram pengantin wanita" style="display:none">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span id="bride-ig-handle">@instagram</span>
+            </a>
+          </div>
+
+          <div class="couple-divider" aria-hidden="true">
+            <div class="divider-line"></div>
+            <div class="divider-amp">&</div>
+            <div class="divider-line"></div>
+          </div>
+
+          <div class="couple-card groom-card" id="groom-card">
+            <div class="couple-photo-frame">
+              <img class="couple-photo" id="groom-photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Crect width='140' height='140' fill='%23333'/%3E%3Ccircle cx='70' cy='55' r='28' fill='%23555'/%3E%3Cellipse cx='70' cy='110' rx='45' ry='35' fill='%23555'/%3E%3C/svg%3E" alt="Foto pengantin pria" loading="lazy" />
+            </div>
+            <div class="couple-name" id="hero-groom-name">Pengantin Pria</div>
+            <div class="couple-full-name" id="hero-groom-full"></div>
+            <div class="couple-parents" id="hero-groom-parents"></div>
+            <a class="couple-ig" id="groom-ig" href="#" target="_blank" rel="noopener" aria-label="Instagram pengantin pria" style="display:none">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span id="groom-ig-handle">@instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN SECTION -->
+    <section class="section section-countdown" id="section-countdown" aria-label="Hitung mundur hari pernikahan">
+      <div class="section-inner">
+        <div class="section-ornament" aria-hidden="true"></div>
+        <h2 class="section-title animate-up">Menuju Hari Bahagia</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <div class="countdown-wrapper animate-up" id="countdown-wrapper" role="timer" aria-live="polite" aria-label="Hitung mundur">
+          <div class="countdown-block">
+            <div class="countdown-number" id="cd-days">00</div>
+            <div class="countdown-label">Hari</div>
+          </div>
+          <div class="countdown-sep" aria-hidden="true">:</div>
+          <div class="countdown-block">
+            <div class="countdown-number" id="cd-hours">00</div>
+            <div class="countdown-label">Jam</div>
+          </div>
+          <div class="countdown-sep" aria-hidden="true">:</div>
+          <div class="countdown-block">
+            <div class="countdown-number" id="cd-minutes">00</div>
+            <div class="countdown-label">Menit</div>
+          </div>
+          <div class="countdown-sep" aria-hidden="true">:</div>
+          <div class="countdown-block">
+            <div class="countdown-number" id="cd-seconds">00</div>
+            <div class="countdown-label">Detik</div>
+          </div>
+        </div>
+        <div class="countdown-expired hidden" id="countdown-expired">
+          <div class="expired-text">🎉 Hari Bahagia Telah Tiba!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS SECTION -->
+    <section class="section section-event" id="section-event" aria-label="Detail acara pernikahan">
+      <div class="section-inner">
+        <h2 class="section-title animate-up">Detail Acara</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <div class="event-cards animate-up">
+          <div class="event-card" id="akad-card">
+            <div class="event-icon" aria-hidden="true">🕌</div>
+            <div class="event-type">Akad Nikah</div>
+            <div class="event-date" id="akad-date">-</div>
+            <div class="event-time" id="akad-time">-</div>
+            <div class="event-location" id="akad-location">-</div>
+            <div class="event-address" id="akad-address"></div>
+            <a class="event-map-btn" id="akad-map-btn" href="#" target="_blank" rel="noopener" aria-label="Buka petunjuk arah akad di Google Maps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Petunjuk Arah
+            </a>
+          </div>
+          <div class="event-card" id="reception-card">
+            <div class="event-icon" aria-hidden="true">💒</div>
+            <div class="event-type">Resepsi Pernikahan</div>
+            <div class="event-date" id="reception-date">-</div>
+            <div class="event-time" id="reception-time">-</div>
+            <div class="event-location" id="reception-location">-</div>
+            <div class="event-address" id="reception-address"></div>
+            <a class="event-map-btn" id="reception-map-btn" href="#" target="_blank" rel="noopener" aria-label="Buka petunjuk arah resepsi di Google Maps">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Petunjuk Arah
+            </a>
+          </div>
+        </div>
+        <div class="maps-embed-wrapper animate-up" id="maps-embed-wrapper">
+          <iframe id="maps-embed" class="maps-embed" src="" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi pernikahan"></iframe>
+        </div>
+        <button class="add-calendar-btn animate-up" id="add-calendar-btn" aria-label="Simpan acara ke kalender">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Simpan ke Kalender
+        </button>
+      </div>
+    </section>
+
+    <!-- LOVE STORY SECTION -->
+    <section class="section section-story hidden" id="section-story" aria-label="Kisah cinta pengantin">
+      <div class="section-inner">
+        <h2 class="section-title animate-up">Kisah Cinta Kami</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <div class="story-timeline animate-up" id="story-timeline" role="list" aria-label="Timeline kisah cinta"></div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section section-gallery hidden" id="section-gallery" aria-label="Galeri foto pengantin">
+      <div class="section-inner">
+        <h2 class="section-title animate-up">Galeri Foto</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <div class="gallery-grid animate-up" id="gallery-grid" role="list" aria-label="Daftar foto"></div>
+      </div>
+      <div class="gallery-lightbox hidden" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Tampilan foto penuh">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Tutup tampilan foto">✕</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Foto sebelumnya">‹</button>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Foto selanjutnya">›</button>
+        <div class="lightbox-inner">
+          <img class="lightbox-img" id="lightbox-img" src="" alt="Foto galeri pengantin" />
+          <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section class="section section-rsvp" id="section-rsvp" aria-label="Konfirmasi kehadiran">
+      <div class="section-inner">
+        <h2 class="section-title animate-up">Konfirmasi Kehadiran</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <p class="section-subtitle animate-up">Kehadiran Anda adalah kebahagiaan terbesar kami</p>
+        <form class="rsvp-form animate-up" id="rsvp-form" novalidate aria-label="Formulir konfirmasi kehadiran">
+          <div class="form-group">
+            <label class="form-label" for="rsvp-name">Nama Lengkap <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="text" id="rsvp-name" name="name" placeholder="Nama Anda" required autocomplete="name" maxlength="100" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rsvp-phone">Nomor WhatsApp</label>
+            <input class="form-input" type="tel" id="rsvp-phone" name="phone" placeholder="08xxxxxxxxxx" autocomplete="tel" maxlength="20" />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Konfirmasi Kehadiran <span aria-hidden="true">*</span></label>
+            <div class="rsvp-options" role="radiogroup" aria-label="Pilih status kehadiran">
+              <label class="rsvp-option" for="rsvp-attending">
+                <input type="radio" id="rsvp-attending" name="status" value="attending" required />
+                <span class="rsvp-option-label">✅ Hadir</span>
+              </label>
+              <label class="rsvp-option" for="rsvp-not-attending">
+                <input type="radio" id="rsvp-not-attending" name="status" value="not_attending" />
+                <span class="rsvp-option-label">❌ Tidak Hadir</span>
+              </label>
+              <label class="rsvp-option" for="rsvp-maybe">
+                <input type="radio" id="rsvp-maybe" name="status" value="maybe" />
+                <span class="rsvp-option-label">🤔 Mungkin Hadir</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group" id="pax-group">
+            <label class="form-label" for="rsvp-pax">Jumlah Tamu <span aria-hidden="true">*</span></label>
+            <div class="pax-counter">
+              <button type="button" class="pax-btn" id="pax-decrease" aria-label="Kurangi jumlah tamu">−</button>
+              <input class="pax-input" type="number" id="rsvp-pax" name="pax_count" value="1" min="1" max="10" readonly aria-label="Jumlah tamu" />
+              <button type="button" class="pax-btn" id="pax-increase" aria-label="Tambah jumlah tamu">+</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="rsvp-message">Ucapan & Doa (Opsional)</label>
+            <textarea class="form-input form-textarea" id="rsvp-message" name="message" placeholder="Tuliskan ucapan dan doa terbaik Anda..." rows="3" maxlength="300"></textarea>
+            <div class="char-counter"><span id="msg-char-count">0</span>/300</div>
+          </div>
+          <button type="submit" class="submit-btn" id="rsvp-submit" aria-label="Kirim konfirmasi kehadiran">
+            <span class="btn-text">Kirim Konfirmasi</span>
+            <span class="btn-loader hidden" aria-hidden="true"></span>
+          </button>
+        </form>
+        <div class="rsvp-success hidden" id="rsvp-success" role="alert" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">🎉</div>
+          <h3 class="success-title">Terima Kasih!</h3>
+          <p class="success-message" id="success-message">Konfirmasi kehadiran Anda telah kami terima. Sampai jumpa di hari bahagia kami!</p>
+        </div>
+        <div class="rsvp-stats animate-up" id="rsvp-stats" aria-live="polite" aria-label="Statistik kehadiran">
+          <div class="stat-item">
+            <span class="stat-number" id="stat-attending">0</span>
+            <span class="stat-label">Hadir</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat-not-attending">0</span>
+            <span class="stat-label">Tidak Hadir</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat-pax">0</span>
+            <span class="stat-label">Total Tamu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUESTBOOK SECTION -->
+    <section class="section section-guestbook" id="section-guestbook" aria-label="Buku tamu dan ucapan">
+      <div class="section-inner">
+        <h2 class="section-title animate-up">Buku Tamu & Ucapan</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <form class="guestbook-form animate-up" id="guestbook-form" novalidate aria-label="Formulir ucapan buku tamu">
+          <div class="form-group">
+            <label class="form-label" for="gb-name">Nama <span aria-hidden="true">*</span></label>
+            <input class="form-input" type="text" id="gb-name" placeholder="Nama Anda" required maxlength="100" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gb-message">Ucapan & Doa <span aria-hidden="true">*</span></label>
+            <textarea class="form-input form-textarea" id="gb-message" placeholder="Tuliskan ucapan terbaik untuk pasangan pengantin..." rows="3" required maxlength="500"></textarea>
+            <div class="char-counter"><span id="gb-char-count">0</span>/500</div>
+          </div>
+          <button type="submit" class="submit-btn" id="gb-submit" aria-label="Kirim ucapan">
+            <span class="btn-text">Kirim Ucapan 💌</span>
+            <span class="btn-loader hidden" aria-hidden="true"></span>
+          </button>
+        </form>
+        <div class="guestbook-messages" id="guestbook-messages" role="feed" aria-label="Daftar ucapan tamu" aria-live="polite"></div>
+        <button class="load-more-btn hidden" id="gb-load-more" aria-label="Muat lebih banyak ucapan">Muat Lebih Banyak</button>
+      </div>
+    </section>
+
+    <!-- GIFT SECTION -->
+    <section class="section section-gift hidden" id="section-gift" aria-label="Hadiah pernikahan">
+      <div class="section-inner">
+        <h2 class="section-title animate-up">Wedding Gift</h2>
+        <div class="section-divider animate-up" aria-hidden="true"></div>
+        <p class="section-subtitle animate-up">Doa restu Anda adalah hadiah terindah. Namun jika ingin memberikan hadiah, Anda dapat mengirimkan melalui:</p>
+        <div class="gift-accounts animate-up" id="gift-accounts" role="list" aria-label="Daftar rekening hadiah"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="invitation-footer" role="contentinfo">
+      <div class="footer-closing" id="footer-closing">
+        <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.</p>
+        <p class="footer-couple" id="footer-couple-name">Kami yang berbahagia</p>
+      </div>
+      <div class="footer-branding" id="footer-branding">
+        <span>Created By </span>
+        <a href="https://omega-invite.com" target="_blank" rel="noopener" class="footer-brand-link">Victor Rizki Valentiano</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- AUDIO -->
+  <audio id="bg-music" preload="none" loop aria-hidden="true">
+    <source id="music-source" src="" type="audio/mpeg" />
+  </audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="/config/supabase.js"></script>
+  <script src="/core/omega.js"></script>
+  <script src="/core/invitation-init.js"></script>
+</body>
+</html>

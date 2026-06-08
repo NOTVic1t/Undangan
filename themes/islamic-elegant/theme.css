@@ -1,0 +1,224 @@
+/* ============================================================
+   OMEGA INVITATION - Theme: Islamic Elegant
+   Islamic with arabesque ornaments and green palette
+   ============================================================ */
+
+:root {
+  --theme-primary: #2C6E49;
+  --theme-secondary: #F0EAD6;
+  --theme-bg: #FDFAF4;
+  --theme-text: #1A2E1A;
+  --theme-accent: #C9A84C;
+  --theme-dark: #0D1A0D;
+  --theme-surface: rgba(44,110,73,0.06);
+  --theme-border: rgba(44,110,73,0.15);
+  --font-display: 'Amiri', 'Georgia', serif;
+  --font-body: 'Noto Sans', sans-serif;
+}
+
+body.theme-islamic-elegant {
+  background: var(--theme-bg);
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(44,110,73,0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(201,168,76,0.04) 0%, transparent 40%);
+}
+
+/* Bismillah - prominent */
+.theme-islamic-elegant .hero-bismillah {
+  font-family: 'Amiri', serif;
+  font-size: clamp(28px, 6vw, 44px);
+  color: #2C6E49;
+  text-shadow: 0 2px 20px rgba(44,110,73,0.2);
+  margin-bottom: 32px;
+}
+
+/* Opening */
+.theme-islamic-elegant .opening-bg {
+  background: linear-gradient(135deg, #0D1A0D 0%, #1A2E1A 50%, #0D1A0D 100%);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232C6E49' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.theme-islamic-elegant .opening-label { color: #C9A84C; }
+.theme-islamic-elegant .opening-guest-name { color: #C9A84C; }
+.theme-islamic-elegant .opening-bride,
+.theme-islamic-elegant .opening-groom { color: #F0EAD6; }
+.theme-islamic-elegant .opening-amp { color: #C9A84C; }
+.theme-islamic-elegant .opening-cta {
+  background: #2C6E49;
+  color: #F0EAD6;
+  box-shadow: 0 8px 32px rgba(44,110,73,0.4);
+}
+.theme-islamic-elegant .opening-cta:hover {
+  background: #245A3C;
+  box-shadow: 0 12px 40px rgba(44,110,73,0.5);
+}
+
+/* Hero */
+.theme-islamic-elegant .section-hero {
+  background: linear-gradient(to bottom, #FDFAF4, #F0EAD6);
+}
+.theme-islamic-elegant .hero-intro { color: #1A2E1A; }
+.theme-islamic-elegant .couple-name { color: #1A2E1A; }
+.theme-islamic-elegant .couple-full-name { color: #2C6E49; }
+.theme-islamic-elegant .couple-parents { color: #555; }
+.theme-islamic-elegant .couple-ig { color: #2C6E49; }
+.theme-islamic-elegant .couple-photo-frame {
+  border-color: #2C6E49;
+  box-shadow: 0 8px 40px rgba(44,110,73,0.15);
+}
+.theme-islamic-elegant .divider-amp { color: #2C6E49; }
+.theme-islamic-elegant .divider-line { background: linear-gradient(to bottom, transparent, #2C6E49, transparent); }
+
+/* Section title */
+.theme-islamic-elegant .section-title { color: #2C6E49; }
+.theme-islamic-elegant .section-divider::before {
+  content: '☽';
+  font-size: 16px;
+  color: #C9A84C;
+}
+
+/* Arabesque border ornament on sections */
+.theme-islamic-elegant .section-event,
+.theme-islamic-elegant .section-rsvp,
+.theme-islamic-elegant .section-guestbook {
+  background: #FDFAF4;
+  border-top: 1px solid rgba(44,110,73,0.08);
+}
+
+/* Countdown */
+.theme-islamic-elegant .section-countdown { background: #F0EAD6; }
+.theme-islamic-elegant .countdown-block {
+  background: rgba(44,110,73,0.06);
+  border-color: rgba(44,110,73,0.2);
+}
+.theme-islamic-elegant .countdown-number { color: #2C6E49; }
+.theme-islamic-elegant .countdown-label { color: #555; }
+.theme-islamic-elegant .countdown-sep { color: #2C6E49; }
+
+/* Event */
+.theme-islamic-elegant .event-card {
+  background: rgba(44,110,73,0.04);
+  border-color: rgba(44,110,73,0.15);
+  color: #1A2E1A;
+}
+.theme-islamic-elegant .event-icon { filter: none; }
+.theme-islamic-elegant .event-type { color: #2C6E49; }
+.theme-islamic-elegant .event-date { color: #1A2E1A; }
+.theme-islamic-elegant .event-time { color: #2C6E49; }
+.theme-islamic-elegant .event-address { color: #666; }
+.theme-islamic-elegant .event-map-btn {
+  border-color: #2C6E49;
+  color: #2C6E49;
+}
+.theme-islamic-elegant .event-map-btn:hover {
+  background: #2C6E49;
+  color: #fff;
+}
+.theme-islamic-elegant .add-calendar-btn {
+  background: rgba(44,110,73,0.06);
+  border-color: rgba(44,110,73,0.2);
+  color: #1A2E1A;
+}
+.theme-islamic-elegant .add-calendar-btn:hover {
+  background: #2C6E49;
+  color: #fff;
+  border-color: #2C6E49;
+}
+.theme-islamic-elegant .maps-embed-wrapper { border-color: rgba(44,110,73,0.2); }
+
+/* Story */
+.theme-islamic-elegant .section-story { background: #FDFAF4; }
+.theme-islamic-elegant .story-timeline::before { background: linear-gradient(to bottom, transparent, #2C6E49, transparent); }
+.theme-islamic-elegant .story-item::before { background: #2C6E49; }
+.theme-islamic-elegant .story-date { color: #C9A84C; }
+.theme-islamic-elegant .story-title { color: #1A2E1A; }
+.theme-islamic-elegant .story-content { color: #555; }
+
+/* Gallery */
+.theme-islamic-elegant .section-gallery { background: #F0EAD6; }
+
+/* RSVP */
+.theme-islamic-elegant .rsvp-form,
+.theme-islamic-elegant .guestbook-form {
+  background: rgba(44,110,73,0.04);
+  border-color: rgba(44,110,73,0.15);
+}
+.theme-islamic-elegant .form-label { color: #2C6E49; }
+.theme-islamic-elegant .form-input {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(44,110,73,0.2);
+  color: #1A2E1A;
+}
+.theme-islamic-elegant .form-input:focus {
+  border-color: #2C6E49;
+  box-shadow: 0 0 0 3px rgba(44,110,73,0.1);
+}
+.theme-islamic-elegant .form-input::placeholder { color: rgba(26,46,26,0.3); }
+.theme-islamic-elegant .submit-btn {
+  background: #2C6E49;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(44,110,73,0.3);
+}
+.theme-islamic-elegant .submit-btn:hover {
+  background: #245A3C;
+  transform: translateY(-2px);
+}
+.theme-islamic-elegant .rsvp-option {
+  background: rgba(255,255,255,0.6);
+  border-color: rgba(44,110,73,0.15);
+}
+.theme-islamic-elegant .rsvp-option:has(input:checked) {
+  border-color: #2C6E49;
+  background: rgba(44,110,73,0.08);
+}
+.theme-islamic-elegant .rsvp-stats {
+  background: rgba(44,110,73,0.04);
+  border-color: rgba(44,110,73,0.15);
+}
+.theme-islamic-elegant .stat-item { border-right-color: rgba(44,110,73,0.12); }
+.theme-islamic-elegant .stat-number { color: #2C6E49; }
+
+/* Guestbook */
+.theme-islamic-elegant .guestbook-message {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(44,110,73,0.12);
+  color: #1A2E1A;
+}
+.theme-islamic-elegant .message-name { color: #1A2E1A; }
+.theme-islamic-elegant .message-text { color: #333; }
+.theme-islamic-elegant .message-avatar { background: linear-gradient(135deg, #2C6E49, #4A9E6E); color: #fff; }
+.theme-islamic-elegant .load-more-btn { border-color: rgba(44,110,73,0.2); color: #2C6E49; }
+.theme-islamic-elegant .load-more-btn:hover { border-color: #2C6E49; }
+
+/* Gift */
+.theme-islamic-elegant .section-gift { background: #F0EAD6; }
+.theme-islamic-elegant .gift-account {
+  background: rgba(44,110,73,0.04);
+  border-color: rgba(44,110,73,0.15);
+  color: #1A2E1A;
+}
+.theme-islamic-elegant .gift-bank-name { color: #2C6E49; }
+.theme-islamic-elegant .gift-account-number,
+.theme-islamic-elegant .gift-account-name { color: #1A2E1A; }
+.theme-islamic-elegant .gift-copy-btn { background: #2C6E49; color: #fff; }
+.theme-islamic-elegant .gift-copy-btn:hover { background: #245A3C; }
+.theme-islamic-elegant .gift-copy-btn.copied { background: #C9A84C; }
+
+/* Footer */
+.theme-islamic-elegant .invitation-footer {
+  background: linear-gradient(to top, #0D1A0D, #1A2E1A);
+  color: #F0EAD6;
+}
+.theme-islamic-elegant .footer-couple { color: #C9A84C; }
+.theme-islamic-elegant .footer-brand-link { color: #C9A84C; }
+
+/* Music */
+.theme-islamic-elegant .music-controller {
+  background: rgba(13,26,13,0.85);
+  border-color: rgba(44,110,73,0.4);
+}
+.theme-islamic-elegant .music-btn { background: #2C6E49; }
+
+/* Pax counter */
+.theme-islamic-elegant .pax-btn { color: #2C6E49; }
+.theme-islamic-elegant .pax-btn:hover { background: #2C6E49; color: #fff; }
